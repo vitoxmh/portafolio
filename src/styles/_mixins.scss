@@ -1,0 +1,27 @@
+@use 'tokens' as *;
+
+@mixin respond($bp) {
+  @if $bp == 'sm' {
+    @media (min-width: $bp-sm) {
+      @content;
+    }
+  } @else if $bp == 'md' {
+    @media (min-width: $bp-md) {
+      @content;
+    }
+  } @else if $bp == 'lg' {
+    @media (min-width: $bp-lg) {
+      @content;
+    }
+  } @else {
+    @error 'Unknown breakpoint: #{$bp}';
+  }
+}
+
+// Shared helpers
+@mixin gradient-text($from, $to) {
+  background-image: linear-gradient(to right, $from, $to);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

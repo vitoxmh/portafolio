@@ -1,0 +1,126 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.education {
+  position: relative;
+  width: 100%;
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $margin-mobile;
+
+  @include respond('lg') {
+    padding: 0 $margin-desktop;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-family: $font-headline;
+    font-size: $text-headline-lg;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    color: var(--color-on-background);
+    margin: 0;
+  }
+
+  &__index {
+    font-family: $font-mono;
+    font-size: 1.25rem;
+    color: var(--color-primary);
+  }
+
+  &__subtitle {
+    font-family: $font-body;
+    font-size: $text-body-md;
+    color: var(--color-on-surface-variant);
+    max-width: 42rem;
+    margin: 0;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $gutter;
+
+    @include respond('md') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: $radius-xl;
+    background: var(--color-surface-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
+    transition: box-shadow 0.3s ease;
+
+    &--primary:hover {
+      box-shadow: 0 0 0 1px rgba(219, 252, 255, 0.3), 0 10px 15px -3px rgb(0 0 0 / 0.1),
+        0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    &--secondary:hover {
+      box-shadow: 0 0 0 1px rgba(209, 188, 255, 0.3), 0 10px 15px -3px rgb(0 0 0 / 0.1),
+        0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--color-primary);
+
+    .education__card--secondary & {
+      color: var(--color-secondary);
+    }
+  }
+
+  &__icon {
+    font-size: 24px;
+  }
+
+  &__period {
+    font-family: $font-mono;
+    font-size: $text-label-sm;
+  }
+
+  &__card-title {
+    font-family: $font-headline;
+    font-size: 20px;
+    line-height: 1.25;
+    font-weight: 600;
+    color: var(--color-on-background);
+    margin: 0;
+  }
+
+  &__university {
+    font-family: $font-body;
+    font-size: 14px;
+    color: var(--color-on-surface-variant);
+    margin: 0;
+  }
+}

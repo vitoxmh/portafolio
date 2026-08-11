@@ -1,0 +1,399 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><style>@layer base{html,body{margin:0;padding:0;scroll-behavior:smooth;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#35343a","on-secondary-container":"#ddcdff","inverse-on-surface":"#303036","on-background":"#e4e1e9","on-secondary":"#3c0090","secondary":"#d1bcff","on-surface-variant":"#b9cacb","tertiary-fixed-dim":"#94db00","surface-glass":"rgba(255, 255, 255, 0.03)","surface-container-lowest":"#0e0e13","primary":"#dbfcff","secondary-container":"#7000ff","surface-dim":"#131318","on-tertiary-container":"#456900","on-surface":"#e4e1e9","tertiary-container":"#a2ef00","on-primary-fixed-variant":"#004f54","surface-bright":"#39383e","surface-container-high":"#2a292f","on-error":"#690005","on-tertiary-fixed-variant":"#334f00","warning-amber":"#FACC15","inverse-surface":"#e4e1e9","on-secondary-fixed-variant":"#5700c9","inverse-primary":"#006970","surface-tint":"#00dbe9","tertiary-fixed":"#a9f900","tertiary":"#e5ffba","on-primary":"#00363a","error":"#ffb4ab","on-primary-container":"#006970","surface":"#131318","surface-container":"#1f1f25","on-tertiary":"#223600","surface-container-low":"#1b1b20","surface-container-highest":"#35343a","primary-fixed":"#7df4ff","outline":"#849495","on-secondary-fixed":"#23005b","on-primary-fixed":"#002022","secondary-fixed-dim":"#d1bcff","on-tertiary-fixed":"#121f00","secondary-fixed":"#e9ddff","on-error-container":"#ffdad6","outline-variant":"#3b494b","background":"#131318","border-glow":"rgba(0, 240, 255, 0.3)","terminal-green":"#22C55E","error-container":"#93000a","primary-container":"#00f0ff","primary-fixed-dim":"#00dbe9"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"base":"8px","margin-desktop":"48px","container-max":"1280px","gutter":"24px","section-gap":"120px","margin-mobile":"16px"},"fontFamily":{"label-sm":["JetBrains Mono"],"body-lg":["Inter"],"headline-lg-mobile":["Hanken Grotesk"],"body-md":["Inter"],"headline-md":["Hanken Grotesk"],"headline-xl":["Hanken Grotesk"],"label-mono":["JetBrains Mono"],"headline-lg":["Hanken Grotesk"]},"fontSize":{"label-sm":["12px",{"lineHeight":"1.2","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],"headline-lg-mobile":["36px",{"lineHeight":"1.2","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"headline-md":["32px",{"lineHeight":"1.3","fontWeight":"600"}],"headline-xl":["64px",{"lineHeight":"1.1","letterSpacing":"-0.04em","fontWeight":"800"}],"label-mono":["14px",{"lineHeight":"1.4","letterSpacing":"0.05em","fontWeight":"500"}],"headline-lg":["48px",{"lineHeight":"1.2","letterSpacing":"-0.02em","fontWeight":"700"}]}}}}</script></head><body class="bg-background font-body-md text-on-background"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.5)]"><div class="h-16 w-full max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop flex items-center justify-between"><div class="flex items-center gap-2"><span class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[20px]">terminal</span></span><span class="font-headline-md text-[20px] tracking-tighter text-on-surface">VH<span class="text-primary">.</span>MORALES</span></div><nav class="hidden lg:flex items-center gap-gutter" data-active-classes="text-primary font-bold"><a aria-current="page" class="transition-all duration-300 text-primary font-bold" data-path="home" href="#home">HOME</a><a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-all duration-300" data-path="about" href="#about">ABOUT</a><a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-all duration-300" data-path="experience" href="#experience">EXPERIENCE</a><a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-all duration-300" data-path="projects" href="#projects">PROJECTS</a><a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-all duration-300" data-path="skills" href="#skills">SKILLS</a><a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-all duration-300" data-path="contact" href="#contact">CONTACT</a></nav><div class="flex items-center gap-4"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16"><div class="flex flex-col w-full relative">
+<div class="fixed inset-0 z-0 pointer-events-none opacity-50 mix-blend-screen">
+<!-- STITCH_SHADER_START:ANIMATION_9 class="absolute inset-0 w-full h-full" -->
+<div class="absolute inset-0 w-full h-full" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_9" style="display:block;width:100%;height:100%" width="1280" height="4113"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_9');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 mouse = u_mouse / u_resolution;
+    
+    // Create a tech-looking grid pattern
+    vec2 grid = fract(uv * 10.0 + u_time * 0.05);
+    float line = smoothstep(0.0, 0.02, grid.x) * smoothstep(0.0, 0.02, grid.y);
+    
+    // Add some organic flow
+    float noise = sin(uv.x * 5.0 + u_time) * cos(uv.y * 3.0 - u_time * 0.5);
+    vec3 color = vec3(0.05, 0.05, 0.1); // Deep dark blue background
+    
+    // Primary accent color (from system: #00f0ff)
+    vec3 accent = vec3(0.0, 0.94, 1.0);
+    
+    color += accent * (1.0 - line) * 0.3;
+    color += accent * abs(noise) * 0.1;
+    
+    // Mouse interaction glow
+    float dist = distance(uv, mouse);
+    color += accent * (1.0 - smoothstep(0.0, 0.3, dist)) * 0.2;
+
+    gl_FragColor = vec4(color, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_9 -->
+</div>
+<div class="relative z-10 w-full flex flex-col gap-section-gap">
+<!-- Hero Section -->
+<section class="min-h-[80vh] flex flex-col justify-center max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop w-full relative overflow-hidden mt-16" id="home">
+<div class="absolute inset-0 pointer-events-none blur-3xl opacity-20 bg-gradient-to-br from-primary via-secondary to-transparent"></div>
+<div class="flex flex-col gap-6 relative z-10 animate-fade-in-up">
+<div class="flex items-center gap-4">
+<span class="w-12 h-px bg-primary/50"></span>
+<span class="font-label-mono text-label-mono text-primary tracking-widest uppercase">Victor Hugo Morales Herrera</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-background max-w-4xl tracking-tighter">
+                    Crafting Digital Worlds <br>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">with Code.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-4">
+                    17+ years experience in React, JavaScript, and Game Development. Bridging the gap between high-end enterprise software and the kinetic energy of gaming.
+                </p>
+<div class="flex flex-wrap gap-4 mt-8">
+<a class="inline-flex items-center justify-center h-12 px-8 font-label-mono text-label-mono font-bold bg-primary text-on-primary hover:shadow-[0_0_20px_rgba(0,240,255,0.4)] transition-all duration-300 rounded" href="#projects">
+                        VIEW PROJECTS
+                    </a>
+<a class="inline-flex items-center justify-center h-12 px-8 font-label-mono text-label-mono font-bold bg-transparent text-primary hover:bg-primary/10 ring-1 ring-primary transition-all duration-300 rounded" href="#contact">
+                        CONTACT ME
+                    </a>
+</div>
+</div>
+<div class="absolute bottom-10 left-margin-desktop hidden lg:flex items-center gap-4 animate-bounce opacity-50">
+<span class="font-label-mono text-label-mono text-on-surface-variant [writing-mode:vertical-rl] transform rotate-180">SCROLL</span>
+<span class="material-symbols-outlined text-primary">arrow_downward</span>
+</div>
+</section>
+<!-- About Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop w-full relative" id="about">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-5 relative group">
+<div class="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-secondary/20 blur-xl rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+<div class="relative w-full h-[500px] rounded-xl overflow-hidden bg-surface-container shadow-xl ring-1 ring-white/10 flex items-center justify-center" data-alt="A stylized, cinematic portrait of a developer working in a dark, cyberpunk-inspired room illuminated by cyan and purple neon lights, typing code on multiple floating holographic screens, depth of field, high contrast." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAdKmTXdFbZaQv7J8_-FW6K5_hdmCbqOUmyxaUol2gZP_2pp6vIti5YHuLJIQdYbO8b76yTv2_y2EmOPmg4GSHeQE46F6tTsRoJnHLTsdpbzRYxnlOYj0eN242qh-SBMRhApxCOOn9bozsh-I3Rm1V12If4siO2QpT0VxP4o0W4BpNS6wbeYxt2iFG8AJDU9dFPuImATrhsC77RrxpU9psGXV1erZi5VfkwQpjhG6h7QcGnqiZRICOv')">
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-80"></div>
+<div class="relative z-10 flex flex-col items-center gap-4">
+<span class="material-symbols-outlined text-[64px] text-primary/50">terminal</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 flex flex-col gap-8 lg:pl-12">
+<div class="flex flex-col gap-2">
+<h2 class="font-headline-lg text-headline-lg text-on-background flex items-center gap-4">
+<span class="text-primary font-label-mono text-xl">01.</span> About
+                        </h2>
+</div>
+<div class="bg-surface-glass backdrop-blur-md p-8 rounded-xl shadow-lg ring-1 ring-white/5 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-primary to-transparent"></div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                            Senior Frontend Developer and Game Developer passionate about creating immersive digital experiences. With a robust background in building scalable web applications using React and modern JavaScript, combined with a deep understanding of game mechanics and optimization in Unity, I bring a unique perspective to UI/UX and interactive development.
+                        </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mt-4">
+                            My approach blends technical precision with creative flair, ensuring every project is not only functionally sound but visually impactful. Whether it's crafting complex dashboards or designing dynamic game interfaces, I treat whitespace as an active element and interactions as opportunities for delight.
+                        </p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+<div class="flex flex-col gap-1 p-4 bg-surface-container rounded-lg shadow-sm">
+<span class="font-headline-md text-headline-md text-primary">17+</span>
+<span class="font-label-mono text-label-sm text-on-surface-variant">YEARS EXP</span>
+</div>
+<div class="flex flex-col gap-1 p-4 bg-surface-container rounded-lg shadow-sm">
+<span class="font-headline-md text-headline-md text-secondary">50+</span>
+<span class="font-label-mono text-label-sm text-on-surface-variant">PROJECTS</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Timeline -->
+<section class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop w-full relative pt-24" id="experience">
+<div class="flex flex-col gap-12">
+<div class="flex flex-col gap-2 items-center text-center">
+<h2 class="font-headline-lg text-headline-lg text-on-background flex items-center gap-4 justify-center">
+<span class="text-primary font-label-mono text-xl">02.</span> Experience
+                    </h2>
+<p class="font-body-md text-on-surface-variant max-w-2xl">A history of delivering high-performance applications and leading technical teams.</p>
+</div>
+<div class="relative w-full max-w-4xl mx-auto mt-12">
+<!-- Timeline line -->
+<div class="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-secondary to-transparent -translate-x-1/2 hidden md:block"></div>
+<div class="flex flex-col gap-16 relative">
+<!-- Role 1 -->
+<div class="relative flex flex-col md:flex-row items-start group">
+<!-- Mobile timeline dot -->
+<div class="absolute left-[-16px] top-2 w-3 h-3 rounded-full bg-primary md:hidden shadow-[0_0_10px_rgba(0,240,255,0.8)]"></div>
+<div class="md:w-1/2 md:pr-12 md:text-right flex flex-col gap-2 md:items-end">
+<h3 class="font-headline-md text-headline-md text-on-background">Senior Frontend Developer</h3>
+<div class="font-label-mono text-label-mono text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">business</span> Fusiona
+                                </div>
+<span class="font-label-mono text-label-sm text-on-surface-variant px-3 py-1 bg-surface-container rounded-full mt-2 inline-block shadow-sm">2020 - Present</span>
+</div>
+<!-- Desktop timeline dot -->
+<div class="absolute left-1/2 top-6 w-4 h-4 rounded-full bg-background ring-2 ring-primary -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center justify-center group-hover:scale-150 transition-transform duration-300">
+<div class="w-1.5 h-1.5 bg-primary rounded-full shadow-[0_0_10px_rgba(0,240,255,1)]"></div>
+</div>
+<div class="md:w-1/2 md:pl-12 mt-4 md:mt-0 flex flex-col gap-4">
+<div class="bg-surface-glass backdrop-blur-md p-6 rounded-xl shadow-lg ring-1 ring-white/5 hover:ring-primary/30 transition-all duration-300">
+<p class="font-body-md text-body-md text-on-surface-variant">Led frontend architecture for enterprise-level applications. Championed performance optimizations and mentored junior developers. Spearheaded the migration of legacy systems to modern React architectures.</p>
+<div class="flex flex-wrap gap-2 mt-4">
+<span class="font-label-mono text-[10px] text-primary bg-primary/10 px-2 py-1 rounded">React</span>
+<span class="font-label-mono text-[10px] text-primary bg-primary/10 px-2 py-1 rounded">TypeScript</span>
+<span class="font-label-mono text-[10px] text-primary bg-primary/10 px-2 py-1 rounded">Redux</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Role 2 -->
+<div class="relative flex flex-col md:flex-row-reverse items-start group">
+<!-- Mobile timeline dot -->
+<div class="absolute left-[-16px] top-2 w-3 h-3 rounded-full bg-secondary md:hidden shadow-[0_0_10px_rgba(209,188,255,0.8)]"></div>
+<div class="md:w-1/2 md:pl-12 flex flex-col gap-2 items-start">
+<h3 class="font-headline-md text-headline-md text-on-background">Lead Developer</h3>
+<div class="font-label-mono text-label-mono text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">business</span> Grupo MONBUCHILE
+                                </div>
+<span class="font-label-mono text-label-sm text-on-surface-variant px-3 py-1 bg-surface-container rounded-full mt-2 inline-block shadow-sm">2016 - 2020</span>
+</div>
+<!-- Desktop timeline dot -->
+<div class="absolute left-1/2 top-6 w-4 h-4 rounded-full bg-background ring-2 ring-secondary -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center justify-center group-hover:scale-150 transition-transform duration-300">
+<div class="w-1.5 h-1.5 bg-secondary rounded-full shadow-[0_0_10px_rgba(209,188,255,1)]"></div>
+</div>
+<div class="md:w-1/2 md:pr-12 mt-4 md:mt-0 flex flex-col gap-4 text-left md:text-right">
+<div class="bg-surface-glass backdrop-blur-md p-6 rounded-xl shadow-lg ring-1 ring-white/5 hover:ring-secondary/30 transition-all duration-300 text-left">
+<p class="font-body-md text-body-md text-on-surface-variant">Managed a team of developers creating innovative digital solutions. Oversaw the entire software development lifecycle from concept to deployment.</p>
+<div class="flex flex-wrap gap-2 mt-4 md:justify-start">
+<span class="font-label-mono text-[10px] text-secondary bg-secondary/10 px-2 py-1 rounded">JavaScript</span>
+<span class="font-label-mono text-[10px] text-secondary bg-secondary/10 px-2 py-1 rounded">Node.js</span>
+<span class="font-label-mono text-[10px] text-secondary bg-secondary/10 px-2 py-1 rounded">AWS</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Grid -->
+<section class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop w-full relative pt-24" id="projects">
+<div class="flex flex-col gap-12">
+<div class="flex flex-col gap-2 items-center text-center">
+<h2 class="font-headline-lg text-headline-lg text-on-background flex items-center gap-4 justify-center">
+<span class="text-primary font-label-mono text-xl">03.</span> Projects
+                    </h2>
+<p class="font-body-md text-on-surface-variant max-w-2xl">Showcasing a blend of utility applications and interactive gaming experiences.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Project 1 -->
+<div class="group relative flex flex-col h-[450px] rounded-xl overflow-hidden bg-surface-container-high shadow-xl ring-1 ring-white/5 hover:shadow-[0_0_30px_rgba(0,240,255,0.15)] transition-all duration-500">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+<div class="h-48 w-full relative overflow-hidden z-10">
+<div class="absolute inset-0 bg-surface-dim/50 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-700" data-alt="A stylized retro arcade screen showing a glowing cyan and magenta version of a classic maze game similar to Pac-Man, with neon grid lines, dark background, cyberpunk aesthetic, high contrast." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCERaMt1zd05Mg1Jkg7CEs_qiRfkYScXZDAs4xE9AxzLCfTOSoccPjAZizN_fRjIhJ07saSFH_3S5FS0yzArfqbMyJayGL7ZZvg3_LU5qfSRG8882vXiwfNRuVdVwSuMXvwcvIZs27BAoVUWN409uRkVdrVi3w4RgqP-x4JQvl_xcjDTMUT43UqHgoOll_sQ0zYzKchUNf7AUHQQylTj9PDx-NN5ZZZyHThezySJlu79cdEGIPwLIUk')"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow z-10 relative bg-surface-container-high/90 backdrop-blur-sm">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-[24px] text-on-background group-hover:text-primary transition-colors">Pacman Arcade Port</h3>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">open_in_new</span>
+</a>
+</div>
+<p class="font-body-md text-on-surface-variant line-clamp-3 text-sm">A faithful recreation of the classic arcade game, built entirely in vanilla JavaScript with custom rendering logic to ensure high performance and retro accuracy.</p>
+<div class="mt-auto flex flex-wrap gap-2 pt-4">
+<span class="font-label-mono text-[10px] text-primary bg-primary/5 px-2 py-1 rounded ring-1 ring-primary/20">JavaScript</span>
+<span class="font-label-mono text-[10px] text-primary bg-primary/5 px-2 py-1 rounded ring-1 ring-primary/20">HTML5 Canvas</span>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group relative flex flex-col h-[450px] rounded-xl overflow-hidden bg-surface-container-high shadow-xl ring-1 ring-white/5 hover:shadow-[0_0_30px_rgba(209,188,255,0.15)] transition-all duration-500">
+<div class="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+<div class="h-48 w-full relative overflow-hidden z-10">
+<div class="absolute inset-0 bg-surface-dim/50 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-700" data-alt="A sleek, modern web application dashboard interface floating in a dark void, showcasing elegant typography, data visualizations in neon purple and cyan, glassmorphic UI elements." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAfq4BMNa2Q89G8AZlIv0oc-dM-XhBD0N50OjFfTaaXUpOQAXDYSZ9wD_tabUWjh3Iik6BGymv_ZnMQzshI_sCByrW_hU9oBNp30X5Xa1GwrFph5Rul7A5tOoFLPPd34ohrXSnEXWaOo88uhQQoSuKxVDY44IZJTPbOqW0Q8dZOns_YZFj9JYqdQKriR0CLZ90zbVAK2o8wMvW-UNaZfLnbOcUvruxkXxF65nFK7CJBYm0qB6GWr72W')"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow z-10 relative bg-surface-container-high/90 backdrop-blur-sm">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-[24px] text-on-background group-hover:text-secondary transition-colors">CV Creator</h3>
+<div class="flex gap-2">
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#" title="GitHub">
+<span class="material-symbols-outlined">code</span>
+</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#" title="Live Demo">
+<span class="material-symbols-outlined">open_in_new</span>
+</a>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant line-clamp-3 text-sm">An intuitive, drag-and-drop resume builder that generates professional PDFs. Features real-time preview and customizable templates.</p>
+<div class="mt-auto flex flex-wrap gap-2 pt-4">
+<span class="font-label-mono text-[10px] text-secondary bg-secondary/5 px-2 py-1 rounded ring-1 ring-secondary/20">React</span>
+<span class="font-label-mono text-[10px] text-secondary bg-secondary/5 px-2 py-1 rounded ring-1 ring-secondary/20">Tailwind</span>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="group relative flex flex-col h-[450px] rounded-xl overflow-hidden bg-surface-container-high shadow-xl ring-1 ring-white/5 hover:shadow-[0_0_30px_rgba(162,239,0,0.15)] transition-all duration-500">
+<div class="absolute inset-0 bg-gradient-to-br from-tertiary-container/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+<div class="h-48 w-full relative overflow-hidden z-10">
+<div class="absolute inset-0 bg-surface-dim/50 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-700" data-alt="A dynamic, explosive action shot from a 2D arcade shooter game developed in Unity, featuring glowing neon green projectiles hitting vibrant stylized bubbles, dark background with subtle grid overlay." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCsbS56-q-mN_Ac4iBzUgF1LAGtDDKJf5_ktULD-ndH7YfmblDoYOt0x0AMmJTXTtQBhyHQ86Y-2kDXoQaWuwy7xdnHrODKnXz6r54cVejmbN-J0jFtF7Y7zYdsPmom8OP34AwOus_aVZPHPBPXmJpOC9A2ASZ2u3e3jyAQbdczSM5h_myPSFfNnYs1UEh4bckSqX9__MGBXkNEP_EcYo_NM57k1KLUlcTJQ8y3EZXwKAbLifbXxh8t')"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow z-10 relative bg-surface-container-high/90 backdrop-blur-sm">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-[24px] text-on-background group-hover:text-tertiary-container transition-colors">Pang - Arcade Unity</h3>
+<a class="text-on-surface-variant hover:text-tertiary-container transition-colors" href="#">
+<span class="material-symbols-outlined">play_arrow</span>
+</a>
+</div>
+<p class="font-body-md text-on-surface-variant line-clamp-3 text-sm">A modern remake of the classic Pang arcade game using the Unity engine. Features updated physics, particle systems, and polished game feel.</p>
+<div class="mt-auto flex flex-wrap gap-2 pt-4">
+<span class="font-label-mono text-[10px] text-tertiary-container bg-tertiary-container/5 px-2 py-1 rounded ring-1 ring-tertiary-container/20">Unity</span>
+<span class="font-label-mono text-[10px] text-tertiary-container bg-tertiary-container/5 px-2 py-1 rounded ring-1 ring-tertiary-container/20">C#</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop w-full relative py-24" id="skills">
+<div class="flex flex-col lg:flex-row gap-12 items-center">
+<div class="lg:w-1/3 flex flex-col gap-4 text-center lg:text-left">
+<h2 class="font-headline-lg text-headline-lg text-on-background">
+<span class="text-primary font-label-mono text-xl block mb-2">04.</span> Tech Stack
+                    </h2>
+<p class="font-body-md text-on-surface-variant">A curated arsenal of modern tools and frameworks, optimized for building high-performance web applications and interactive experiences.</p>
+</div>
+<div class="lg:w-2/3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+<!-- Skill items -->
+<div class="flex flex-col items-center justify-center p-6 bg-surface-container rounded-xl shadow-sm hover:shadow-[0_0_15px_rgba(0,240,255,0.2)] hover:-translate-y-1 transition-all duration-300 ring-1 ring-white/5">
+<span class="material-symbols-outlined text-4xl text-primary mb-2">javascript</span>
+<span class="font-label-mono text-sm text-on-surface">JavaScript</span>
+</div>
+<div class="flex flex-col items-center justify-center p-6 bg-surface-container rounded-xl shadow-sm hover:shadow-[0_0_15px_rgba(0,240,255,0.2)] hover:-translate-y-1 transition-all duration-300 ring-1 ring-white/5">
+<span class="material-symbols-outlined text-4xl text-primary mb-2">code</span>
+<span class="font-label-mono text-sm text-on-surface">React</span>
+</div>
+<div class="flex flex-col items-center justify-center p-6 bg-surface-container rounded-xl shadow-sm hover:shadow-[0_0_15px_rgba(0,240,255,0.2)] hover:-translate-y-1 transition-all duration-300 ring-1 ring-white/5">
+<span class="material-symbols-outlined text-4xl text-primary mb-2">css</span>
+<span class="font-label-mono text-sm text-on-surface">Tailwind</span>
+</div>
+<div class="flex flex-col items-center justify-center p-6 bg-surface-container rounded-xl shadow-sm hover:shadow-[0_0_15px_rgba(0,240,255,0.2)] hover:-translate-y-1 transition-all duration-300 ring-1 ring-white/5">
+<span class="material-symbols-outlined text-4xl text-secondary mb-2">sports_esports</span>
+<span class="font-label-mono text-sm text-on-surface">Unity</span>
+</div>
+<div class="flex flex-col items-center justify-center p-6 bg-surface-container rounded-xl shadow-sm hover:shadow-[0_0_15px_rgba(0,240,255,0.2)] hover:-translate-y-1 transition-all duration-300 ring-1 ring-white/5">
+<span class="material-symbols-outlined text-4xl text-secondary mb-2">terminal</span>
+<span class="font-label-mono text-sm text-on-surface">TypeScript</span>
+</div>
+<div class="flex flex-col items-center justify-center p-6 bg-surface-container rounded-xl shadow-sm hover:shadow-[0_0_15px_rgba(0,240,255,0.2)] hover:-translate-y-1 transition-all duration-300 ring-1 ring-white/5">
+<span class="material-symbols-outlined text-4xl text-secondary mb-2">html</span>
+<span class="font-label-mono text-sm text-on-surface">HTML5</span>
+</div>
+<div class="flex flex-col items-center justify-center p-6 bg-surface-container rounded-xl shadow-sm hover:shadow-[0_0_15px_rgba(0,240,255,0.2)] hover:-translate-y-1 transition-all duration-300 ring-1 ring-white/5">
+<span class="material-symbols-outlined text-4xl text-tertiary-container mb-2">data_object</span>
+<span class="font-label-mono text-sm text-on-surface">Redux</span>
+</div>
+<div class="flex flex-col items-center justify-center p-6 bg-surface-container rounded-xl shadow-sm hover:shadow-[0_0_15px_rgba(0,240,255,0.2)] hover:-translate-y-1 transition-all duration-300 ring-1 ring-white/5">
+<span class="material-symbols-outlined text-4xl text-tertiary-container mb-2">api</span>
+<span class="font-label-mono text-sm text-on-surface">REST API</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+        // Simple parallax effect for section titles
+        document.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const titles = document.querySelectorAll('.font-headline-lg');
+            
+            titles.forEach(title => {
+                const rect = title.getBoundingClientRect();
+                if(rect.top < window.innerHeight && rect.bottom > 0) {
+                     const yPos = (scrolled * 0.1);
+                     // Subtle translation to avoid breaking layout, just enough to feel dynamic
+                     // title.style.transform = `translateY(${yPos}px)`; 
+                }
+            });
+        });
+    </script>
+</div></main><section class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop w-full relative py-24" id="certifications"><div class="flex flex-col gap-12"><div class="flex flex-col gap-2 items-center text-center"><h2 class="font-headline-lg text-headline-lg text-on-background flex items-center gap-4 justify-center"><span class="text-primary font-label-mono text-xl">05.</span> Cursos y Certificaciones</h2><p class="font-body-md text-on-surface-variant max-w-2xl">Continuous learning and professional development in emerging technologies and methodologies.</p></div><div class="grid grid-cols-1 md:grid-cols-3 gap-gutter"><div class="bg-surface-glass backdrop-blur-md p-6 rounded-xl shadow-lg ring-1 ring-white/5 hover:ring-primary/30 transition-all duration-300 flex flex-col gap-4"><div class="flex items-center gap-3 text-primary"><span class="material-symbols-outlined">school</span><span class="font-label-mono text-label-sm">2026</span></div><h3 class="font-headline-md text-[20px] text-on-background leading-tight">Introducción a la programación en Python I</h3><p class="font-body-md text-sm text-on-surface-variant">Pontificia Universidad Católica de Chile</p></div><div class="bg-surface-glass backdrop-blur-md p-6 rounded-xl shadow-lg ring-1 ring-white/5 hover:ring-secondary/30 transition-all duration-300 flex flex-col gap-4"><div class="flex items-center gap-3 text-secondary"><span class="material-symbols-outlined">verified</span><span class="font-label-mono text-label-sm">2026</span></div><h3 class="font-headline-md text-[20px] text-on-background leading-tight">Google AI Essentials V1</h3><p class="font-body-md text-sm text-on-surface-variant">Google · Coursera</p></div><div class="bg-surface-glass backdrop-blur-md p-6 rounded-xl shadow-lg ring-1 ring-white/5 hover:ring-tertiary-container/30 transition-all duration-300 flex flex-col gap-4"><div class="flex items-center gap-3 text-tertiary-container"><span class="material-symbols-outlined">groups</span><span class="font-label-mono text-label-sm">2026</span></div><h3 class="font-headline-md text-[20px] text-on-background leading-tight">Scrum Essentials</h3><p class="font-body-md text-sm text-on-surface-variant">Universidad de Chile (FCFM)</p></div></div></div></section><footer class="w-full bg-surface-container-low pt-section-gap pb-margin-desktop border-t border-outline-variant/10"><div class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop"><div class="flex flex-col md:flex-row justify-between items-center gap-base"><div class="flex flex-col gap-2"><p class="font-headline-md text-headline-md text-on-surface">Let's collaborate.</p><p class="font-body-md text-on-surface-variant">Victor Hugo Morales Herrera © 2024</p></div><div class="flex gap-gutter items-center"><a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">link</span><span class="font-label-mono">LINKEDIN</span></a><a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">code</span><span class="font-label-mono">GITHUB</span></a></div></div></div></footer>
+
+</body></html>

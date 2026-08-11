@@ -1,0 +1,150 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(19, 19, 24, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+
+  &__inner {
+    height: 4rem;
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: 0 $margin-mobile;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include respond('lg') {
+      padding: 0 $margin-desktop;
+    }
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__logo {
+    width: 2rem;
+    height: 2rem;
+    background: var(--color-primary);
+    border-radius: $radius-lg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .material-symbols-outlined {
+      color: var(--color-on-primary);
+      font-size: 20px;
+    }
+  }
+
+  &__name {
+    font-family: $font-headline;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.05em;
+    color: var(--color-on-surface);
+    white-space: nowrap;
+  }
+
+  &__name-accent {
+    color: var(--color-primary);
+  }
+
+  &__nav {
+    display: none;
+    align-items: center;
+    gap: $gutter;
+
+    @include respond('lg') {
+      display: flex;
+    }
+  }
+
+  &__nav-link {
+    font-family: $font-mono;
+    font-size: $text-label-mono;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    color: var(--color-on-surface-variant);
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--color-primary);
+    }
+
+    &--active {
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__lang {
+    font-family: $font-mono;
+    font-size: $text-label-mono;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    color: var(--color-on-surface-variant);
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+
+  &__menu-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+
+    .material-symbols-outlined {
+      color: var(--color-on-surface);
+    }
+
+    @include respond('lg') {
+      display: none;
+    }
+  }
+
+  &__avatar {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .material-symbols-outlined {
+      color: var(--color-on-primary);
+      font-size: 18px;
+    }
+  }
+}

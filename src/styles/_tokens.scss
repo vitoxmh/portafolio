@@ -1,0 +1,89 @@
+// Design tokens: color theme lives in CSS custom properties so it can be
+// swapped at runtime; layout / type tokens are plain SCSS variables.
+
+:root {
+  --color-surface-variant: #35343a;
+  --color-on-secondary-container: #ddcdff;
+  --color-inverse-on-surface: #303036;
+  --color-on-background: #e4e1e9;
+  --color-on-secondary: #3c0090;
+  --color-secondary: #d1bcff;
+  --color-on-surface-variant: #b9cacb;
+  --color-tertiary-fixed-dim: #94db00;
+  --color-surface-glass: rgba(255, 255, 255, 0.03);
+  --color-surface-container-lowest: #0e0e13;
+  --color-primary: #dbfcff;
+  --color-secondary-container: #7000ff;
+  --color-surface-dim: #131318;
+  --color-on-tertiary-container: #456900;
+  --color-on-surface: #e4e1e9;
+  --color-tertiary-container: #a2ef00;
+  --color-on-primary-fixed-variant: #004f54;
+  --color-surface-bright: #39383e;
+  --color-surface-container-high: #2a292f;
+  --color-on-error: #690005;
+  --color-on-tertiary-fixed-variant: #334f00;
+  --color-warning-amber: #facc15;
+  --color-inverse-surface: #e4e1e9;
+  --color-on-secondary-fixed-variant: #5700c9;
+  --color-inverse-primary: #006970;
+  --color-surface-tint: #00dbe9;
+  --color-tertiary-fixed: #a9f900;
+  --color-tertiary: #e5ffba;
+  --color-on-primary: #00363a;
+  --color-error: #ffb4ab;
+  --color-on-primary-container: #006970;
+  --color-surface: #131318;
+  --color-surface-container: #1f1f25;
+  --color-on-tertiary: #223600;
+  --color-surface-container-low: #1b1b20;
+  --color-surface-container-highest: #35343a;
+  --color-primary-fixed: #7df4ff;
+  --color-outline: #849495;
+  --color-on-secondary-fixed: #23005b;
+  --color-on-primary-fixed: #002022;
+  --color-secondary-fixed-dim: #d1bcff;
+  --color-on-tertiary-fixed: #121f00;
+  --color-secondary-fixed: #e9ddff;
+  --color-on-error-container: #ffdad6;
+  --color-outline-variant: #3b494b;
+  --color-background: #131318;
+  --color-border-glow: rgba(0, 240, 255, 0.3);
+  --color-terminal-green: #22c55e;
+  --color-error-container: #93000a;
+  --color-primary-container: #00f0ff;
+  --color-primary-fixed-dim: #00dbe9;
+}
+
+// Spacing
+$space-base: 8px;
+$margin-desktop: 48px;
+$margin-mobile: 16px;
+$container-max: 1280px;
+$gutter: 24px;
+$section-gap: 120px;
+
+// Radii
+$radius-lg: 0.25rem;
+$radius-xl: 0.5rem;
+$radius-2xl: 1rem;
+
+// Fonts
+$font-headline: 'Hanken Grotesk', sans-serif;
+$font-body: 'Inter', sans-serif;
+$font-mono: 'JetBrains Mono', monospace;
+
+// Type scale
+$text-body-lg: 18px;
+$text-body-md: 16px;
+$text-headline-xl: 64px;
+$text-headline-lg: 48px;
+$text-headline-lg-mobile: 36px;
+$text-headline-md: 32px;
+$text-label-mono: 14px;
+$text-label-sm: 12px;
+
+// Breakpoints
+$bp-sm: 640px;
+$bp-md: 768px;
+$bp-lg: 1024px;
