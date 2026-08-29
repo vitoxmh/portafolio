@@ -3,6 +3,7 @@ import Hero from './Hero'
 import Stats from './Stats'
 import About from './About'
 import Experience from './Experience'
+import Services from './Services'
 import Projects from './Projects'
 import Skills from './Skills'
 import Education from './Education'
@@ -26,6 +27,7 @@ export default function Site() {
             <Stats />
             <About />
             <Experience />
+            <Services />
             <Projects />
             <Skills />
             <Education />

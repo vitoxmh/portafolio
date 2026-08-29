@@ -1,43 +1,6 @@
 import Icon from './Icon'
 import { useLanguage } from '../hooks/useLanguage'
-import type { TranslationKey } from '../i18n'
-
-const NAV_ITEMS: {
-  icon: string
-  labelKey: TranslationKey
-  href: string
-  path: string
-  active: boolean
-}[] = [
-  {
-    icon: 'grid_view',
-    labelKey: 'bottomnav.home',
-    href: '#home',
-    path: 'home',
-    active: true,
-  },
-  {
-    icon: 'rocket_launch',
-    labelKey: 'bottomnav.work',
-    href: '#projects',
-    path: 'projects',
-    active: false,
-  },
-  {
-    icon: 'history_edu',
-    labelKey: 'bottomnav.exp',
-    href: '#experience',
-    path: 'experience',
-    active: false,
-  },
-  {
-    icon: 'alternate_email',
-    labelKey: 'bottomnav.mail',
-    href: '#contact',
-    path: 'contact',
-    active: false,
-  },
-]
+import { NAVIGATION } from '../data'
 
 export default function BottomNav() {
   const { t } = useLanguage()
@@ -48,7 +11,7 @@ export default function BottomNav() {
       data-active-classes="bottom-nav__item--active"
     >
       <div className="bottom-nav__inner">
-        {NAV_ITEMS.map((item) => (
+        {NAVIGATION.bottomNav.map((item) => (
           <a
             key={item.path}
             aria-current={item.active ? 'page' : undefined}
@@ -57,7 +20,7 @@ export default function BottomNav() {
             href={item.href}
           >
             <Icon name={item.icon} />
-            <span className="bottom-nav__label">{t(item.labelKey)}</span>
+            <span className="bottom-nav__label">{t(item.label)}</span>
           </a>
         ))}
       </div>

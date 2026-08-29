@@ -1,5 +1,10 @@
+import { useRef, useState } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { A11y, Keyboard } from 'swiper/modules'
+import type { Swiper as SwiperType } from 'swiper'
+import 'swiper/css'
 import Icon from './Icon'
-import { IMAGES, LINKS } from '../portfolioData'
+import { PROJECTS } from '../data'
 import { useLanguage } from '../hooks/useLanguage'
 
 const openExternal = (url: string) => {
@@ -26,161 +31,143 @@ const openOnEnter = (url: string) => (e: React.KeyboardEvent<HTMLElement>) => {
   }
 }
 
+function ProjectCard({ project }: { project: (typeof PROJECTS.list)[number] }) {
+  const { t } = useLanguage()
+
+  return (
+    <article
+      className={`projects__card projects__card--${project.variant}`}
+      {...cardProps(project.url, t(project.title), openOnEnter(project.url))}
+    >
+      <div className="projects__glow"></div>
+      <div className="projects__media">
+        <div className="projects__media-overlay"></div>
+        <div
+          className="projects__media-img"
+          data-alt={t(project.alt)}
+          style={{ backgroundImage: `url('${project.image}')` }}
+        ></div>
+      </div>
+      <div className="projects__body">
+        <div className="projects__top">
+          <h3 className="projects__name">{t(project.title)}</h3>
+          <div className="projects__links">
+            {project.links.map((link) => (
+              <a
+                key={link.url}
+                className="projects__link"
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={link.title}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <Icon name={link.icon} />
+              </a>
+            ))}
+          </div>
+        </div>
+        <p className="projects__desc">{t(project.description)}</p>
+        <div className="projects__tags">
+          {project.tags.map((tag) => (
+            <span key={tag} className="projects__tag">
+              {tag}
+            </span>
+          ))}
+        </div>
+        <a
+          className="projects__cta"
+          href={project.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
+        >
+          {t(PROJECTS.cta)} <Icon name="arrow_forward" className="projects__cta-icon" />
+        </a>
+      </div>
+    </article>
+  ) 
+}
+
 export default function Projects() {
   const { t } = useLanguage()
+  const [current, setCurrent] = useState(0)
+  const swiperRef = useRef<SwiperType | null>(null)
+  const isSlider = PROJECTS.list.length > 3
 
   return (
     <section className="projects" id="projects">
       <div className="projects__wrap">
         <div className="projects__header">
           <h2 className="projects__title">
-            <span className="projects__index">03.</span> {t('projects.title')}
+            <span className="projects__index">04.</span> {t(PROJECTS.title)}
           </h2>
-          <p className="projects__subtitle">{t('projects.subtitle')}</p>
+          <p className="projects__subtitle">{t(PROJECTS.subtitle)}</p>
         </div>
-        <div className="projects__grid">
-          <article
-            className="projects__card projects__card--primary"
-            {...cardProps(LINKS.pacman, t('projects.pacman.title'), openOnEnter(LINKS.pacman))}
-          >
-            <div className="projects__glow"></div>
-            <div className="projects__media">
-              <div className="projects__media-overlay"></div>
-              <div
-                className="projects__media-img"
-                data-alt="A stylized retro arcade screen showing a glowing cyan and magenta version of a classic maze game similar to Pac-Man, with neon grid lines, dark background, cyberpunk aesthetic, high contrast."
-                style={{ backgroundImage: `url('${IMAGES.pacmanDesktop}')` }}
-              ></div>
-            </div>
-            <div className="projects__body">
-              <div className="projects__top">
-                <h3 className="projects__name">{t('projects.pacman.title')}</h3>
-                <a
-                  className="projects__link"
-                  href={LINKS.pacman}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <Icon name="open_in_new" />
-                </a>
-              </div>
-              <p className="projects__desc">{t('projects.pacman.desc')}</p>
-              <div className="projects__tags">
-                <span className="projects__tag">JavaScript</span>
-                <span className="projects__tag">HTML5 Canvas</span>
-              </div>
-              <a
-                className="projects__cta"
-                href={LINKS.pacman}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
+        {isSlider ? (
+          <div className="projects__slider">
+            <Swiper
+              className="projects__swiper"
+              modules={[Keyboard, A11y]}
+              loop
+              speed={600}
+              grabCursor
+              spaceBetween={24}
+              slidesPerView={1}
+              breakpoints={{
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+              }}
+              keyboard={{ enabled: true, onlyInViewport: true }}
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper
+              }}
+              onSlideChange={(swiper) => setCurrent(swiper.realIndex)}
+            >
+              {PROJECTS.list.map((project) => (
+                <SwiperSlide key={project.id} className="projects__slide">
+                  <ProjectCard project={project} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            <div className="projects__controls">
+              <button
+                type="button"
+                className="projects__arrow"
+                onClick={() => swiperRef.current?.slidePrev()}
+                aria-label={t(PROJECTS.prev)}
               >
-                {t('mprojects.cta')} <Icon name="arrow_forward" className="projects__cta-icon" />
-              </a>
-            </div>
-          </article>
-
-          <article
-            className="projects__card projects__card--secondary"
-            {...cardProps(LINKS.cv, t('projects.cv.title'), openOnEnter(LINKS.cv))}
-          >
-            <div className="projects__glow"></div>
-            <div className="projects__media">
-              <div className="projects__media-overlay"></div>
-              <div
-                className="projects__media-img"
-                data-alt="A sleek, modern web application dashboard interface floating in a dark void, showcasing elegant typography, data visualizations in neon purple and cyan, glassmorphic UI elements."
-                style={{ backgroundImage: `url('${IMAGES.cvDesktop}')` }}
-              ></div>
-            </div>
-            <div className="projects__body">
-              <div className="projects__top">
-                <h3 className="projects__name">{t('projects.cv.title')}</h3>
-                <div className="projects__links">
-                  <a
-                    className="projects__link"
-                    href={LINKS.cvGithub}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="GitHub"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <Icon name="code" />
-                  </a>
-                  <a
-                    className="projects__link"
-                    href={LINKS.cv}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Live Demo"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <Icon name="open_in_new" />
-                  </a>
-                </div>
+                <Icon name="chevron_left" />
+              </button>
+              <div className="projects__dots">
+                {PROJECTS.list.map((project, i) => (
+                  <button
+                    key={project.id}
+                    type="button"
+                    className={`projects__dot${i === current ? ' projects__dot--active' : ''}`}
+                    onClick={() => swiperRef.current?.slideToLoop(i)}
+                    aria-label={t(project.title)}
+                    aria-current={i === current}
+                  ></button>
+                ))}
               </div>
-              <p className="projects__desc">{t('projects.cv.desc')}</p>
-              <div className="projects__tags">
-                <span className="projects__tag">React</span>
-                <span className="projects__tag">Tailwind</span>
-              </div>
-              <a
-                className="projects__cta"
-                href={LINKS.cv}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
+              <button
+                type="button"
+                className="projects__arrow"
+                onClick={() => swiperRef.current?.slideNext()}
+                aria-label={t(PROJECTS.next)}
               >
-                {t('mprojects.cta')} <Icon name="arrow_forward" className="projects__cta-icon" />
-              </a>
+                <Icon name="chevron_right" />
+              </button>
             </div>
-          </article>
-
-          <article
-            className="projects__card projects__card--tertiary"
-            {...cardProps(LINKS.pang, t('projects.pang.title'), openOnEnter(LINKS.pang))}
-          >
-            <div className="projects__glow"></div>
-            <div className="projects__media">
-              <div className="projects__media-overlay"></div>
-              <div
-                className="projects__media-img"
-                data-alt="A dynamic, explosive action shot from a 2D arcade shooter game developed in Unity, featuring glowing neon green projectiles hitting vibrant stylized bubbles, dark background with subtle grid overlay."
-                style={{ backgroundImage: `url('${IMAGES.pangDesktop}')` }}
-              ></div>
-            </div>
-            <div className="projects__body">
-              <div className="projects__top">
-                <h3 className="projects__name">{t('projects.pang.title')}</h3>
-                <a
-                  className="projects__link"
-                  href={LINKS.pang}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <Icon name="play_arrow" />
-                </a>
-              </div>
-              <p className="projects__desc">{t('projects.pang.desc')}</p>
-              <div className="projects__tags">
-                <span className="projects__tag">Unity</span>
-                <span className="projects__tag">C#</span>
-              </div>
-              <a
-                className="projects__cta"
-                href={LINKS.pang}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-              >
-                {t('mprojects.cta')} <Icon name="arrow_forward" className="projects__cta-icon" />
-              </a>
-            </div>
-          </article>
-        </div>
+          </div>
+        ) : (
+          <div className="projects__grid">
+            {PROJECTS.list.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   )

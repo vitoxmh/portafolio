@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState, type ReactNode } from 'react'
-import { translations, type Language, type TranslationKey } from './i18n'
+import type { Language, LocalizedList, LocalizedString } from './i18n'
 import { LanguageContext, type LanguageContextValue } from './LanguageContext'
 
 const STORAGE_KEY = 'portfolio-language'
@@ -26,13 +26,12 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const value: LanguageContextValue = {
     language,
     setLanguage,
-    t: (key: TranslationKey) => {
-      const value = translations[language][key]
-      return typeof value === 'string' ? value : key
+    t: (value: LocalizedString) => {
+      if (typeof value === 'string') return value
+      return value[language]
     },
-    tList: (key: TranslationKey) => {
-      const value = translations[language][key]
-      return typeof value === 'string' ? [value] : value
+    tList: (value: LocalizedList) => {
+      return value[language]
     },
   }
 

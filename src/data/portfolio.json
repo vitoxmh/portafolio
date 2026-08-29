@@ -1,0 +1,812 @@
+{
+  "site": {
+    "brandInitials": "VH",
+    "brandName": "MORALES",
+    "email": "contacto@vmh.cl",
+    "langSwitch": {
+      "en": "Switch language",
+      "es": "Cambiar idioma"
+    },
+    "images": {
+      "aboutPortrait": "https://lh3.googleusercontent.com/aida-public/AB6AXuAdKmTXdFbZaQv7J8_-FW6K5_hdmCbqOUmyxaUol2gZP_2pp6vIti5YHuLJIQdYbO8b76yTv2_y2EmOPmg4GSHeQE46F6tTsRoJnHLTsdpbzRYxnlOYj0eN242qh-SBMRhApxCOOn9bozsh-I3Rm1V12If4siO2QpT0VxP4o0W4BpNS6wbeYxt2iFG8AJDU9dFPuImATrhsC77RrxpU9psGXV1erZi5VfkwQpjhG6h7QcGnqiZRICOv",
+      "pacmanDesktop": "/img/pacman.jpg",
+      "cvDesktop": "/img/cv-desktop.jpg",
+      "pangDesktop": "/img/pang-desktop.jpg",
+      "pacmanMobile": "/img/pacman-mobile.jpg",
+      "cvMobile": "/img/cv-mobile.jpg"
+    },
+    "links": {
+      "pacman": "/pacman/",
+      "cv": "https://github.com/vitoxmh/creator-cv",
+      "cvGithub": "https://github.com/vitoxmh/creator-cv",
+      "pang": "https://pang-web-arcade.vercel.app/",
+      "linkedin": "https://www.linkedin.com/in/victor-hugo-morales-herrera/",
+      "github": "https://github.com/vitoxmh/"
+    }
+  },
+  "navigation": {
+    "header": [
+      {
+        "path": "home",
+        "href": "#home",
+        "label": { "en": "HOME", "es": "INICIO" },
+        "active": true
+      },
+      {
+        "path": "about",
+        "href": "#about",
+        "label": { "en": "ABOUT", "es": "SOBRE MÍ" },
+        "active": false
+      },
+      {
+        "path": "experience",
+        "href": "#experience",
+        "label": { "en": "EXPERIENCE", "es": "EXPERIENCIA" },
+        "active": false
+      },
+      {
+        "path": "projects",
+        "href": "#projects",
+        "label": { "en": "PROJECTS", "es": "PROYECTOS" },
+        "active": false
+      },
+      {
+        "path": "skills",
+        "href": "#skills",
+        "label": { "en": "SKILLS", "es": "HABILIDADES" },
+        "active": false
+      },
+      {
+        "path": "education",
+        "href": "#education",
+        "label": { "en": "EDUCATION", "es": "EDUCACIÓN" },
+        "active": false
+      },
+      {
+        "path": "certifications",
+        "href": "#certifications",
+        "label": { "en": "CERTIFICATIONS", "es": "CERTIFICACIONES" },
+        "active": false
+      },
+      {
+        "path": "contact",
+        "href": "#contact",
+        "label": { "en": "CONTACT", "es": "CONTACTO" },
+        "active": false
+      }
+    ],
+    "bottomNav": [
+      {
+        "path": "home",
+        "href": "#home",
+        "icon": "grid_view",
+        "label": { "en": "Home", "es": "Inicio" },
+        "active": true
+      },
+      {
+        "path": "projects",
+        "href": "#projects",
+        "icon": "rocket_launch",
+        "label": { "en": "Work", "es": "Proyectos" },
+        "active": false
+      },
+      {
+        "path": "experience",
+        "href": "#experience",
+        "icon": "history_edu",
+        "label": { "en": "Exp", "es": "Exp" },
+        "active": false
+      },
+      {
+        "path": "contact",
+        "href": "#contact",
+        "icon": "alternate_email",
+        "label": { "en": "Mail", "es": "Correo" },
+        "active": false
+      }
+    ]
+  },
+  "hero": {
+    "eyebrow": "Victor Hugo Morales Herrera",
+    "badge": {
+      "en": "System Online",
+      "es": "Sistema en línea"
+    },
+    "title1": {
+      "en": "Crafting Digital Worlds",
+      "es": "Creando Mundos Digitales"
+    },
+    "title2": {
+      "en": "with Code.",
+      "es": "con Código."
+    },
+    "title1Mobile": {
+      "en": "Crafting",
+      "es": "Creando"
+    },
+    "title2Mobile": {
+      "en": "Digital Worlds",
+      "es": "Mundos Digitales"
+    },
+    "title3Mobile": {
+      "en": "with Code",
+      "es": "con Código"
+    },
+    "subtitle": {
+      "en": "More than 17 years of experience in web development and Front-End, designing and building robust, scalable applications focused on user experience. Specialized in JavaScript, React, and modern web technologies, with a strong comprehensive understanding of software development.",
+      "es": "Más de 17 años de experiencia en desarrollo web y Front-End, diseñando y construyendo aplicaciones robustas, escalables y centradas en la experiencia de usuario. Especializado en JavaScript, React y tecnologías web modernas, con una sólida visión integral del desarrollo de software."
+    },
+    "subtitleMobile": {
+      "en": "Senior Frontend & Game Developer merging structural integrity with creative flair.",
+      "es": "Desarrollador Frontend Senior y de videojuegos, fusionando integridad estructural con ingenio creativo."
+    },
+    "viewProjects": {
+      "en": "VIEW PROJECTS",
+      "es": "VER PROYECTOS"
+    },
+    "viewWork": {
+      "en": "View Work",
+      "es": "Ver Trabajos"
+    },
+    "contactMe": {
+      "en": "CONTACT ME",
+      "es": "CONTÁCTAME"
+    },
+    "scroll": {
+      "en": "SCROLL",
+      "es": "DESPLAZA"
+    }
+  },
+  "stats": [
+    {
+      "value": "17+",
+      "label": { "en": "Years Exp", "es": "Años Exp" },
+      "variant": null
+    },
+    {
+      "value": "50+",
+      "label": { "en": "Projects", "es": "Proyectos" },
+      "variant": "secondary"
+    }
+  ],
+  "about": {
+    "title": {
+      "en": "About",
+      "es": "Sobre mí"
+    },
+    "portraitAlt": "A stylized, cinematic portrait of a developer working in a dark, cyberpunk-inspired room illuminated by cyan and purple neon lights, typing code on multiple floating holographic screens, depth of field, high contrast.",
+    "paragraphs": [
+      {
+        "en": "Senior Frontend Developer and Game Developer passionate about creating immersive digital experiences. With a robust background in building scalable web applications using React and modern JavaScript, combined with a deep understanding of game mechanics and optimization in Unity, I bring a unique perspective to UI/UX and interactive development.",
+        "es": "Desarrollador Frontend Senior y desarrollador de videojuegos apasionado por crear experiencias digitales inmersivas. Con una sólida trayectoria construyendo aplicaciones web escalables con React y JavaScript moderno, combinada con un profundo conocimiento de mecánicas de juego y optimización en Unity, aporto una perspectiva única al desarrollo UI/UX e interactivo."
+      },
+      {
+        "en": "My approach blends technical precision with creative flair, ensuring every project is not only functionally sound but visually impactful. Whether it's crafting complex dashboards or designing dynamic game interfaces, I treat whitespace as an active element and interactions as opportunities for delight.",
+        "es": "Mi enfoque combina precisión técnica con creatividad, asegurando que cada proyecto no solo sea funcionalmente sólido sino visualmente impactante. Ya sea creando dashboards complejos o diseñando interfaces de juego dinámicas, trato el espacio en blanco como un elemento activo y las interacciones como oportunidades de deleite."
+      }
+    ],
+    "stats": [
+      {
+        "value": "17+",
+        "label": { "en": "YEARS EXP", "es": "AÑOS EXP" },
+        "variant": null
+      },
+      {
+        "value": "50+",
+        "label": { "en": "PROJECTS", "es": "PROYECTOS" },
+        "variant": "secondary"
+      }
+    ]
+  },
+  "experience": {
+    "title": {
+      "en": "Experience",
+      "es": "Experiencia"
+    },
+    "subtitle": {
+      "en": "A history of delivering high-performance applications and leading technical teams.",
+      "es": "Una trayectoria entregando aplicaciones de alto rendimiento y liderando equipos técnicos."
+    },
+    "jobs": [
+      {
+        "id": "job1",
+        "reversed": false,
+        "title": {
+          "en": "Senior Frontend Developer",
+          "es": "Desarrollador Frontend Senior"
+        },
+        "company": "Fusiona",
+        "period": {
+          "en": "February 2009 - June 2026",
+          "es": "Febrero 2009 - Junio 2026"
+        },
+        "desc": {
+          "en": [
+            "Development and maintenance of projects for the public sites of Movistar B2C, Movistar B2B and Corporate.",
+            "Development of the PAES simulator for the Universidad San Sebastián (https://simulador.uss.cl/).",
+            "Development of the website for the Fundación para la Innovación Agraria, FIA (https://www.fia.cl/).",
+            "Implementation and management of the Opencode AI Agent in the workflow to optimize development."
+          ],
+          "es": [
+            "Desarrollo y mantención de proyectos para los sitios públicos de Movistar B2C, Movistar B2B y Corporación.",
+            "Desarrollo del simulador PAES para la Universidad San Sebastián (https://simulador.uss.cl/).",
+            "Desarrollo del sitio web para la Fundación para la Innovación Agraria, FIA (https://www.fia.cl/).",
+            "Implementación y manejo del Agente IA Opencode en el flujo de trabajo para la optimización del desarrollo"
+          ]
+        },
+        "tech": ["HTML 5", "JavaScript", "CSS3", "PHP", "GIT", "DOCKER", "WORDPRESS", "HUGO"]
+      },
+      {
+        "id": "job2",
+        "reversed": true,
+        "title": {
+          "en": "Lead Developer",
+          "es": "Desarrollador Líder"
+        },
+        "company": "Grupo MONBUCHILE",
+        "period": {
+          "en": "March 2008 - September 2008",
+          "es": "Marzo 2008 - Septiembe 2008"
+        },
+        "desc": {
+          "en": [
+            "Development and implementation of the website for the MONBUCHILE community through the Embassy of Japan.",
+            "Database design, programming and system implementation."
+          ],
+          "es": [
+            "Desarrollo e implementación del sitio web para la comunidad MONBUCHILE por intermedio de la embajada de Japón.",
+            "Realización del diseño de base de datos, programación y levantamiento del sistema"
+          ]
+        },
+        "tech": ["JavaScript", "PHP", "HTML", "CSS"]
+      }
+    ]
+  },
+  "services": {
+    "title": {
+      "en": "Services",
+      "es": "Servicios"
+    },
+    "subtitle": {
+      "en": "Specialized solutions at the intersection of web development and interactive experiences.",
+      "es": "Soluciones especializadas en la intersección del desarrollo web y las experiencias interactivas."
+    },
+    "list": [
+      {
+        "icon": "code",
+        "color": "primary",
+        "title": {
+          "en": "Frontend Development",
+          "es": "Desarrollo Frontend"
+        },
+        "desc": {
+          "en": "Building scalable, high-performance web applications with React, TypeScript, and modern tooling.",
+          "es": "Construcción de aplicaciones web escalables y de alto rendimiento con React, TypeScript y herramientas modernas."
+        },
+        "features": {
+          "en": ["React & TypeScript", "Responsive Design", "Performance Optimization", "SPA Architecture"],
+          "es": ["React y TypeScript", "Diseño Responsivo", "Optimización de Rendimiento", "Arquitectura SPA"]
+        }
+      },
+      {
+        "icon": "sports_esports",
+        "color": "secondary",
+        "title": {
+          "en": "Game Development",
+          "es": "Desarrollo de Videojuegos"
+        },
+        "desc": {
+          "en": "Creating immersive interactive experiences and game mechanics using Unity and custom rendering logic.",
+          "es": "Creación de experiencias interactivas inmersivas y mecánicas de juego usando Unity y lógica de renderizado personalizada."
+        },
+        "features": {
+          "en": ["Unity & C#", "Game Mechanics", "2D & 3D Rendering", "Performance Tuning"],
+          "es": ["Unity y C#", "Mecánicas de Juego", "Renderizado 2D y 3D", "Optimización de Rendimiento"]
+        }
+      },
+      {
+        "icon": "palette",
+        "color": "tertiary",
+        "title": {
+          "en": "UI/UX & Interactive Design",
+          "es": "Diseño UI/UX e Interactivo"
+        },
+        "desc": {
+          "en": "Crafting visually impactful interfaces with attention to whitespace, animation, and user delight.",
+          "es": "Creación de interfaces visualmente impactantes con atención al espacio en blanco, animación y deleite del usuario."
+        },
+        "features": {
+          "en": ["Interface Design", "Micro-interactions", "Animation Systems", "Accessibility"],
+          "es": ["Diseño de Interfaces", "Micro-interacciones", "Sistemas de Animación", "Accesibilidad"]
+        }
+      }
+    ]
+  },
+  "projects": {
+    "title": {
+      "en": "Personal Projects",
+      "es": "Proyectos Personales"
+    },
+    "subtitle": {
+      "en": "Showcasing a blend of utility applications and interactive gaming experiences.",
+      "es": "Mostrando una mezcla de aplicaciones de utilidad y experiencias de juego interactivas."
+    },
+    "prev": {
+      "en": "Previous project",
+      "es": "Proyecto anterior"
+    },
+    "next": {
+      "en": "Next project",
+      "es": "Proyecto siguiente"
+    },
+    "cta": {
+      "en": "Initialize",
+      "es": "Iniciar"
+    },
+    "list": [
+      {
+        "id": "pacman",
+        "variant": "primary",
+        "image": "/img/pacman.jpg",
+        "url": "https://pacman-online.vercel.app/",
+        "alt": {
+          "en": "A stylized retro arcade screen showing a glowing cyan and magenta version of a classic maze game similar to Pac-Man, with neon grid lines, dark background, cyberpunk aesthetic, high contrast.",
+          "es": "Una pantalla de arcade retro estilizada mostrando una versión brillante en cian y magenta de un juego de laberinto clásico similar a Pac-Man, con líneas de rejilla neón, fondo oscuro, estética cyberpunk y alto contraste."
+        },
+        "title": {
+          "en": "Pacman Arcade Port",
+          "es": "Port de Pacman Arcade"
+        },
+        "description": {
+          "en": "A faithful recreation of the classic arcade game, built entirely in vanilla JavaScript with custom rendering logic to ensure high performance and retro accuracy.",
+          "es": "Una recreación fiel del clásico juego arcade, construida íntegramente en JavaScript puro con lógica de renderizado personalizada para garantizar alto rendimiento y fidelidad retro."
+        },
+        "tags": ["JavaScript", "HTML5 Canvas"],
+        "links": [
+          {
+            "icon": "open_in_new",
+            "url": "/pacman/"
+          }
+        ]
+      },
+      {
+        "id": "cv",
+        "variant": "secondary",
+        "image": "/img/cv-desktop.jpg",
+        "url": "https://github.com/vitoxmh/creator-cv",
+        "alt": {
+          "en": "A sleek, modern web application dashboard interface floating in a dark void, showcasing elegant typography, data visualizations in neon purple and cyan, glassmorphic UI elements.",
+          "es": "Una interfaz de dashboard de aplicación web moderna y elegante flotando en un vacío oscuro, mostrando tipografía refinada, visualizaciones de datos en neón púrpura y cian, y elementos de UI glassmórficos."
+        },
+        "title": {
+          "en": "CV Creator",
+          "es": "Creador de CV"
+        },
+        "description": {
+          "en": "An intuitive, drag-and-drop resume builder that generates professional PDFs. Features real-time preview and customizable templates.",
+          "es": "Un creador de currículums intuitivo con arrastrar y soltar que genera PDFs profesionales. Incluye vista previa en tiempo real y plantillas personalizables."
+        },
+        "tags": ["React", "Tailwind"],
+        "links": [
+          {
+            "icon": "code",
+            "url": "https://github.com/vitoxmh/creator-cv",
+            "title": "GitHub"
+          },
+          {
+            "icon": "open_in_new",
+            "url": "https://github.com/vitoxmh/creator-cv",
+            "title": "Live Demo"
+          }
+        ]
+      },
+      {
+        "id": "pang",
+        "variant": "tertiary",
+        "image": "/img/pang-desktop.jpg",
+        "url": "https://pang-web-arcade.vercel.app/",
+        "alt": {
+          "en": "A dynamic, explosive action shot from a 2D arcade shooter game developed in Unity, featuring glowing neon green projectiles hitting vibrant stylized bubbles, dark background with subtle grid overlay.",
+          "es": "Una toma de acción explosiva y dinámica de un juego de disparos arcade 2D desarrollado en Unity, con proyectiles de neón verde brillante golpeando burbujas vibrantes estilizadas, fondo oscuro con sutil superposición de rejilla."
+        },
+        "title": {
+          "en": "Pang - Arcade Unity",
+          "es": "Pang - Arcade Unity"
+        },
+        "description": {
+          "en": "A modern remake of the classic Pang arcade game using the Unity engine. Features updated physics, particle systems, and polished game feel.",
+          "es": "Un remake moderno del clásico juego arcade Pang usando el motor Unity. Cuenta con física actualizada, sistemas de partículas y una jugabilidad pulida."
+        },
+        "tags": ["Unity", "C#"],
+        "links": [
+          {
+            "icon": "play_arrow",
+            "url": "https://pang-web-arcade.vercel.app/"
+          }
+        ]
+      },
+      {
+        "id": "tetris",
+        "variant": "tertiary",
+        "image": "/img/tetris-desktop.jpg",
+        "url": "/tetris/",
+        "alt": {
+          "en": "A Tetris game inspired by the classic Game Boy version, fully developed using vanilla JavaScript and the HTML5 Canvas API. All graphics are rendered pixel by pixel using mathematical arrays, without relying on external sprite sheets or image assets.",
+          "es": "Un juego de Tetris inspirado en la versión clásica de Game Boy, completamente desarrollado con JavaScript vanilla y HTML5 Canvas. Todo el renderizado gráfico se realiza pixel por pixel mediante arreglos matemáticos, sin usar hojas de sprites externas."
+        },
+        "title": {
+          "en": "Tetris – Game Boy in JavaScript",
+          "es": "Tetris - Game Boy en JavaScript"
+        },
+        "description": {
+          "en": "A Tetris game inspired by the classic Game Boy version, fully developed using vanilla JavaScript and the HTML5 Canvas API. All graphics are rendered pixel by pixel using mathematical arrays, without relying on external sprite sheets or image assets.",
+          "es": "Un juego de Tetris inspirado en la versión clásica de Game Boy, completamente desarrollado con JavaScript vanilla y HTML5 Canvas. Todo el renderizado gráfico se realiza pixel por pixel mediante arreglos matemáticos, sin usar hojas de sprites externas."
+        },
+        "tags": ["HTML Canvas", "JavaScript"],
+        "links": [
+          {
+            "icon": "play_arrow",
+            "url": "/tetris/"
+          }
+        ]
+      },
+      {
+        "id": "TREX",
+        "variant": "tertiary",
+        "image": "/img/dino-desktop.jpg",
+        "url": "https://github.com/vitoxmh/T-REX-Neuronal-Network",
+        "alt": {
+          "en": "A Chrome offline dinosaur-style game built with Unity 2021.3.16f1, where a neural network learns to play automatically using genetic algorithms, including crossover and mutation.",
+          "es": "Un juego del dinosaurio estilo Chrome offline, construido en Unity 2021.3.16f1, donde una red neuronal aprende a jugar automáticamente utilizando algoritmos genéticos (cruce y mutación)."
+        },
+        "title": {
+          "en": "T-REX Neuronal Network",
+          "es": "T-REX Neuronal Network"
+        },
+        "description": {
+          "en": "A Chrome offline dinosaur-style game built with Unity 2021.3.16f1, where a neural network learns to play automatically using genetic algorithms, including crossover and mutation.",
+          "es": "Un juego del dinosaurio estilo Chrome offline, construido en Unity 2021.3.16f1, donde una red neuronal aprende a jugar automáticamente utilizando algoritmos genéticos (cruce y mutación)."
+        },
+        "tags": ["Unity", "C#"],
+        "links": [
+          {
+            "icon": "play_arrow",
+            "url": "https://github.com/vitoxmh/T-REX-Neuronal-Network"
+          }
+        ]
+      },
+      {
+        "id": "inventario",
+        "variant": "tertiary",
+        "image": "/img/inventario-desktop.jpg",
+        "url": "https://github.com/vitoxmh/inventario",
+        "alt": {
+          "en": "Web system for managing video game, console, Amiibo, book, accessory, and platform collections. The system consists of a PHP REST API, a secondary Python API built with FastAPI, a React frontend, and a MySQL 8.0 database, all orchestrated with Docker.",
+          "es": "Sistema web para la gestión de colecciones de videojuegos, consolas, amiibos, libros, accesorios y plataformas. Compuesto por una API REST en PHP, una API secundaria en Python (FastAPI), un frontend en React y una base de datos MySQL 8.0, todo orquestado con Docker."
+        },
+        "title": {
+          "en": "Inventory - Collection Management System",
+          "es": "Inventario - Sistema de Gestión de Colecciones"
+        },
+        "description": {
+          "en": "Web system for managing video game, console, Amiibo, book, accessory, and platform collections. The system consists of a PHP REST API, a secondary Python API built with FastAPI, a React frontend, and a MySQL 8.0 database, all orchestrated with Docker.",
+          "es": "Sistema web para la gestión de colecciones de videojuegos, consolas, amiibos, libros, accesorios y plataformas. Compuesto por una API REST en PHP, una API secundaria en Python (FastAPI), un frontend en React y una base de datos MySQL 8.0, todo orquestado con Docker."
+        },
+        "tags": [
+          "PHP",
+          "Docker"
+        ],
+        "links": [
+          {
+            "icon": "play_arrow",
+            "url": "https://github.com/vitoxmh/inventario"
+          }
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "title": {
+      "en": "Tech Stack",
+      "es": "Stack Tecnológico"
+    },
+    "subtitle": {
+      "en": "A curated arsenal of modern tools and frameworks, optimized for building high-performance web applications and interactive experiences.",
+      "es": "Un arsenal seleccionado de herramientas y frameworks modernos, optimizados para construir aplicaciones web de alto rendimiento y experiencias interactivas."
+    },
+    "items": [
+      { "icon": "javascript", "color": "primary", "label": "JavaScript" },
+      { "icon": "code", "color": "primary", "label": "React" },
+      { "icon": "css", "color": "primary", "label": "Tailwind" },
+      { "icon": "sports_esports", "color": "secondary", "label": "Unity" },
+      { "icon": "terminal", "color": "secondary", "label": "TypeScript" },
+      { "icon": "html", "color": "secondary", "label": "HTML5" },
+      { "icon": "data_object", "color": "tertiary", "label": "Redux" },
+      { "icon": "api", "color": "tertiary", "label": "REST API" },
+      { "icon": "account_tree", "color": "primary", "label": "Git" },
+      { "icon": "cloud", "color": "secondary", "label": "Docker" },
+      { "icon": "palette", "color": "primary", "label": "CSS3" },
+      { "icon": "php", "color": "primary", "label": "PHP" },
+      { "icon": "dns", "color": "secondary", "label": "NodeJS" },
+      { "icon": "python", "color": "tertiary", "label": "Python", "size": "12px" },
+      {
+        "icon": "smart_toy",
+        "color": "tertiary",
+        "label": { "en": "Opencode Agent", "es": "Agente Opencode" }
+      }
+    ]
+  },
+  "education": {
+    "title": {
+      "en": "Education",
+      "es": "Educación"
+    },
+    "subtitle": {
+      "en": "The academic foundation behind 17+ years of software development.",
+      "es": "La base académica detrás de más de 17 años de desarrollo de software."
+    },
+    "items": [
+      {
+        "icon": "account_balance",
+        "color": "primary",
+        "degree": {
+          "en": "Computer Science Engineering",
+          "es": "Ingeniero De EjecucióN En Informática"
+        },
+        "university": "Universidad de las Américas",
+        "period": {
+          "en": "2003 - 2008",
+          "es": "2005 - 2009"
+        }
+      },
+      {
+        "icon": "school",
+        "color": "secondary",
+        "degree": {
+          "en": "Information Technology Diploma",
+          "es": "Mecánica Industrial Mención Máquinas - Herramientas"
+        },
+        "university": "Liceo Industrial Vicente Perez Rosales",
+        "period": {
+          "en": "2008 - 2009",
+          "es": "1996 - 2000"
+        }
+      }
+    ]
+  },
+  "certifications": {
+    "title": {
+      "en": "Courses and Certifications",
+      "es": "Cursos y Certificaciones"
+    },
+    "subtitle": {
+      "en": "Continuous learning and professional development in emerging technologies and methodologies.",
+      "es": "Aprendizaje continuo y desarrollo profesional en tecnologías y metodologías emergentes."
+    },
+    "verify": {
+      "en": "Verify certificate",
+      "es": "Verificar certificado"
+    },
+    "prev": {
+      "en": "Previous certificate",
+      "es": "Certificado anterior"
+    },
+    "next": {
+      "en": "Next certificate",
+      "es": "Certificado siguiente"
+    },
+    "items": [
+      {
+        "icon": "school",
+        "color": "primary",
+        "year": "2026",
+        "title": {
+          "en": "Introduction to Programming in Python I",
+          "es": "Introducción a la programación en Python I"
+        },
+        "issuer": "Pontificia Universidad Católica de Chile",
+        "href": "https://www.coursera.org/account/accomplishments/verify/YHXYS0LK023Y"
+      },
+      {
+        "icon": "verified",
+        "color": "secondary",
+        "year": "2026",
+        "title": {
+          "en": "Google AI Essentials V1",
+          "es": "Google AI Essentials V1"
+        },
+        "issuer": "Google · Coursera",
+        "href": "https://www.coursera.org/account/accomplishments/specialization/3IA1SCCWZ2OZ"
+      },
+      {
+        "icon": "groups",
+        "color": "tertiary",
+        "year": "2026",
+        "title": {
+          "en": "Scrum Essentials",
+          "es": "Scrum Essentials"
+        },
+        "issuer": "Universidad de Chile (FCFM)",
+        "href": "https://app.fcfmonline.cl/certificates/3f90c7528c8a46bc95454d6d71f62f76"
+      },
+      {
+        "icon": "groups",
+        "color": "tertiary",
+        "year": "2026",
+        "title": {
+          "en": "Discover the Art of Prompting",
+          "es": "Discover the Art of Prompting"
+        },
+        "issuer": "Google",
+        "href": "https://www.coursera.org/account/accomplishments/verify/RVEQRULV7EZE"
+      },
+      {
+        "icon": "groups",
+        "color": "tertiary",
+        "year": "2026",
+        "title": {
+          "en": "Foundational C# with Microsoft",
+          "es": "Foundational C# with Microsoft"
+        },
+        "issuer": "freeCodeCamp",
+        "href": "https://www.freecodecamp.org/certification/vitoxmh/foundational-c-sharp-with-microsoft"
+      },
+      {
+        "icon": "groups",
+        "color": "tertiary",
+        "year": "2026",
+        "title": {
+          "en": "Curso de Angular - De cero a Experto (Frontend Developer )",
+          "es": "Curso de Angular - De cero a Experto (Frontend Developer )"
+        },
+        "issuer": "Udemy",
+        "href": "https://www.udemy.com/certificate/UC-7e51b1e8-e3d0-4e79-97d1-9457047c59ba/"
+      }
+    ]
+  },
+  "contact": {
+    "title": {
+      "en": "Contact",
+      "es": "Contacto"
+    },
+    "subtitle": {
+      "en": "Have a project in mind or want to collaborate? Send a message and let's build something exceptional together.",
+      "es": "¿Tienes un proyecto en mente o quieres colaborar? Envía un mensaje y construyamos algo excepcional juntos."
+    },
+    "name": {
+      "en": "NAME",
+      "es": "NOMBRE"
+    },
+    "email": {
+      "en": "EMAIL",
+      "es": "EMAIL"
+    },
+    "subject": {
+      "en": "SUBJECT",
+      "es": "ASUNTO"
+    },
+    "message": {
+      "en": "MESSAGE",
+      "es": "MENSAJE"
+    },
+    "namePlaceholder": {
+      "en": "Your name",
+      "es": "Tu nombre"
+    },
+    "emailPlaceholder": {
+      "en": "you@example.com",
+      "es": "tu@ejemplo.com"
+    },
+    "subjectPlaceholder": {
+      "en": "Project inquiry",
+      "es": "Consulta de proyecto"
+    },
+    "messagePlaceholder": {
+      "en": "Tell me about your project...",
+      "es": "Cuéntame sobre tu proyecto..."
+    },
+    "send": {
+      "en": "SEND TRANSMISSION",
+      "es": "ENVIAR TRANSMISIÓN"
+    },
+    "sending": {
+      "en": "SENDING...",
+      "es": "ENVIANDO..."
+    },
+    "success": {
+      "en": "Message sent. I'll get back to you soon.",
+      "es": "Mensaje enviado. Te responderé pronto."
+    },
+    "errors": {
+      "nameRequired": {
+        "en": "Name is required.",
+        "es": "El nombre es obligatorio."
+      },
+      "nameTooLong": {
+        "en": "Name must be 100 characters or less.",
+        "es": "El nombre debe tener 100 caracteres o menos."
+      },
+      "emailRequired": {
+        "en": "Email is required.",
+        "es": "El email es obligatorio."
+      },
+      "emailInvalid": {
+        "en": "Enter a valid email address.",
+        "es": "Ingresa un email válido."
+      },
+      "emailTooLong": {
+        "en": "Email must be 254 characters or less.",
+        "es": "El email debe tener 254 caracteres o menos."
+      },
+      "subjectTooLong": {
+        "en": "Subject must be 150 characters or less.",
+        "es": "El asunto debe tener 150 caracteres o menos."
+      },
+      "messageRequired": {
+        "en": "Message is required.",
+        "es": "El mensaje es obligatorio."
+      },
+      "messageTooLong": {
+        "en": "Message must be 5000 characters or less.",
+        "es": "El mensaje debe tener 5000 caracteres o menos."
+      },
+      "sendFailed": {
+        "en": "The message could not be sent.",
+        "es": "No se pudo enviar el mensaje."
+      },
+      "captchaRequired": {
+        "en": "Please complete the captcha before sending.",
+        "es": "Completa el captcha antes de enviar."
+      }
+    },
+    "methods": {
+      "linkedin": {
+        "en": "LINKEDIN",
+        "es": "LINKEDIN"
+      },
+      "github": {
+        "en": "GITHUB",
+        "es": "GITHUB"
+      }
+    },
+    "availability": {
+      "en": "AVAILABILITY",
+      "es": "DISPONIBILIDAD"
+    },
+    "availabilityText": {
+      "en": "Currently available for freelance projects and full-time opportunities.",
+      "es": "Actualmente disponible para proyectos freelance y oportunidades a tiempo completo."
+    },
+    "downloadCv": {
+      "en": "DOWNLOAD CV",
+      "es": "DESCARGAR CV"
+    },
+    "emailAddress": "contacto@vmh.cl",
+    "linkedin": {
+      "url": "https://www.linkedin.com/in/victor-hugo-morales-herrera",
+      "handle": "in/victor-hugo-morales-herrera-"
+    },
+    "github": {
+      "url": "https://github.com/vitoxmh/",
+      "handle": "github.com/vitoxmh/"
+    }
+  },
+  "footer": {
+    "cta": {
+      "en": "Let's collaborate.",
+      "es": "Colaboremos."
+    },
+    "rights": {
+      "en": "Victor Hugo Morales Herrera",
+      "es": "Victor Hugo Morales Herrera"
+    },
+    "linkedin": {
+      "en": "LINKEDIN",
+      "es": "LINKEDIN"
+    },
+    "github": {
+      "en": "GITHUB",
+      "es": "GITHUB"
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import { useLanguage } from '../hooks/useLanguage'
+import { NAVIGATION, SITE } from '../data'
 
 export default function Header() {
   const { language, setLanguage, t } = useLanguage()
@@ -11,42 +12,31 @@ export default function Header() {
             <span className="material-symbols-outlined">terminal</span>
           </span>
           <span className="header__name">
-            VH<span className="header__name-accent">.</span>MORALES
+            {SITE.brandInitials}
+            <span className="header__name-accent">.</span>
+            {SITE.brandName}
           </span>
         </div>
         <nav
           className="header__nav"
           data-active-classes="header__nav-link--active"
         >
-          <a aria-current="page" className="header__nav-link header__nav-link--active" data-path="home" href="#home">
-            {t('nav.home')}
-          </a>
-          <a className="header__nav-link" data-path="about" href="#about">
-            {t('nav.about')}
-          </a>
-          <a className="header__nav-link" data-path="experience" href="#experience">
-            {t('nav.experience')}
-          </a>
-          <a className="header__nav-link" data-path="projects" href="#projects">
-            {t('nav.projects')}
-          </a>
-          <a className="header__nav-link" data-path="skills" href="#skills">
-            {t('nav.skills')}
-          </a>
-          <a className="header__nav-link" data-path="education" href="#education">
-            {t('nav.education')}
-          </a>
-          <a className="header__nav-link" data-path="certifications" href="#certifications">
-            {t('nav.certifications')}
-          </a>
-          <a className="header__nav-link" data-path="contact" href="#contact">
-            {t('nav.contact')}
-          </a>
+          {NAVIGATION.header.map((item) => (
+            <a
+              key={item.path}
+              aria-current={item.active ? 'page' : undefined}
+              className={`header__nav-link${item.active ? ' header__nav-link--active' : ''}`}
+              data-path={item.path}
+              href={item.href}
+            >
+              {t(item.label)}
+            </a>
+          ))}
         </nav>
         <div className="header__actions">
           <button
             onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
-            aria-label={t('lang.switch')}
+            aria-label={t(SITE.langSwitch)}
             className="header__lang"
           >
             {language === 'es' ? 'EN' : 'ES'}

@@ -104,10 +104,12 @@ portfolio/
 └── src/
     ├── main.tsx                  # Punto de entrada de React
     ├── App.tsx                   # Envuelve <Site /> en <LanguageProvider />
-    ├── i18n.ts                   # Diccionarios ES/EN y tipos de traducción
+    ├── i18n.ts                   # Tipos (Language, LocalizedString, LocalizedList)
     ├── LanguageContext.ts        # Contexto de idioma
     ├── LanguageProvider.tsx      # Proveedor de idioma (detecta y persiste)
-    ├── portfolioData.ts          # Imágenes y enlaces externos
+    ├── data.ts                   # Acceso tipado al JSON general (proyectos, skills, etc.)
+    ├── data/
+    │   └── portfolio.json        # JSON general con toda la información del sitio (ES/EN)
     ├── components/
     │   ├── Site.tsx              # Composición principal de secciones
     │   ├── Header.tsx            # Navegación superior + selector de idioma
@@ -115,7 +117,7 @@ portfolio/
     │   ├── Stats.tsx             # Contadores (años, proyectos)
     │   ├── About.tsx             # Sobre mí
     │   ├── Experience.tsx        # Línea de tiempo laboral
-    │   ├── Projects.tsx          # Grid de proyectos personales
+    │   ├── Projects.tsx          # Grid/slider de proyectos personales
     │   ├── Skills.tsx            # Stack tecnológico
     │   ├── Education.tsx         # Educación
     │   ├── Certifications.tsx    # Cursos y certificaciones
@@ -153,20 +155,23 @@ portfolio/
 
 La aplicación es bilingüe y el idioma se gestiona mediante **Context API**:
 
-- **`src/i18n.ts`**: define los diccionarios `en` y `es` con las mismas claves. El tipo `TranslationKey` se deriva del diccionario en inglés (`keyof typeof en`), lo que garantiza que el español y los usos estén tipados.
+- **`src/data/portfolio.json`**: fuente única de todo el contenido. Cada dato traducible es un objeto `{ "en": "...", "es": "..." }`; si el texto es idéntico en ambos idiomas puede ser un string plano. Esto facilita editar un dato sin tocar dos diccionarios.
+- **`src/i18n.ts`**: define solo los tipos `Language` (`'es' | 'en'`), `LocalizedString` (`string | { en, es }`) y `LocalizedList` (`{ en: string[]; es: string[] }`).
 - **`src/LanguageProvider.tsx`**: detecta el idioma inicial (guardado en `localStorage` con la clave `portfolio-language`, o el idioma del navegador si no hay valor guardado) y lo persiste en cada cambio. También actualiza `document.documentElement.lang`.
 - **Hooks disponibles**:
   - `useLanguage()` → expone `{ language, setLanguage, t, tList }`.
-  - `t(key)` → devuelve la cadena traducida.
-  - `tList(key)` → devuelve un array de cadenas (para listas como descripciones de empleo).
+  - `t(value)` → recibe un `LocalizedString` y devuelve la cadena en el idioma activo (un string plano se devuelve tal cual).
+  - `tList(value)` → recibe un `LocalizedList` y devuelve el array del idioma activo (para listas como descripciones de empleo).
 
 Ejemplo de uso:
 
 ```tsx
 const { t, tList } = useLanguage()
-t('about.title')          // "About" / "Sobre mí"
-tList('exp.job1.desc')    // array de strings
+t(ABOUT.title)                  // "About" / "Sobre mí"
+tList(EXPERIENCE.jobs[0].desc)  // array de strings
 ```
+
+> Los componentes acceden a los datos con `t(data.xxxx)`; las claves de traducción (`TranslationKey`) ya no existen.
 
 ---
 
@@ -189,13 +194,23 @@ Las constantes están al inicio de `public/send_contact.php`:
 | `SMTP_PASS`            | Contraseña / contraseña de aplicación (vacío desactiva auth). |
 | `SMTP_SECURE`          | `'ssl'` \| `'tls'` \| `''`.                             |
 | `SMTP_DEBUG`           | `0` off, `1` cliente, `2` cliente + servidor.           |
+| `RECAPTCHA_SECRET_KEY` | Secret key de Google reCAPTCHA v2 (solo servidor). Vacía = verificación deshabilitada. |
+| `RECAPTCHA_SITE_KEY`   | Site key pública de reCAPTCHA v2 (para el widget del frontend). |
 
 > **Importante**: en producción reemplaza las credenciales de ejemplo y usa variables de entorno o un mecanismo seguro de configuración; nunca expongas contraseñas en el repositorio.
+
+### Google reCAPTCHA v2 (checkbox)
+
+1. Crea un sitio en <https://www.google.com/recaptcha/admin> y elige **reCAPTCHA v2 → Casilla "No soy un robot"**.
+2. Define `RECAPTCHA_SECRET_KEY` en `config.secret.php` (o como variable de entorno `RECAPTCHA_SECRET_KEY`). La verificación solo se activa si la secret key está configurada.
+3. Define la **site key** en el frontend: `src/config.ts` (`VITE_RECAPTCHA_SITE_KEY` en el build, o reemplaza el valor por defecto). La site key es pública y viaja en el bundle.
+4. El widget se renderiza automáticamente en el formulario y el token se envía al servidor como `g-recaptcha-response`. El PHP lo valida contra `https://www.google.com/recaptcha/api/siteverify` antes de enviar el correo.
+5. Requisito del servidor: extensión `curl` **o** `openssl` (para la llamada HTTPS a Google).
 
 ### Validación
 
 - **Cliente** (`src/hooks/useContactForm.ts`): nombre requerido (≤ 100), email requerido y con formato válido (≤ 254), asunto opcional (≤ 150), mensaje requerido (≤ 5000). Mensajes de error traducidos.
-- **Servidor** (`public/send_contact.php`): revalida los mismos límites, valida el email con `FILTER_VALIDATE_EMAIL` y elimina CR/LF de campos usados en cabeceras.
+- **Servidor** (`public/send_contact.php`): revalida los mismos límites, valida el email con `FILTER_VALIDATE_EMAIL`, elimina CR/LF de campos usados en cabeceras y, si `RECAPTCHA_SECRET_KEY` está definida, verifica el token de reCAPTCHA contra Google.
 
 ### Respuestas
 

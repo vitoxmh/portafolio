@@ -1,5 +1,5 @@
 import Icon from './Icon'
-import { LINKS } from '../portfolioData'
+import { FOOTER, LINKS } from '../data'
 import { useLanguage } from '../hooks/useLanguage'
 
 export default function Footer() {
@@ -10,8 +10,8 @@ export default function Footer() {
     <footer className="footer u-pb-safe">
       <div className="footer__inner">
         <div className="footer__info">
-          <p className="footer__cta">{t('footer.cta')}</p>
-          <p className="footer__rights">© {year} {t('footer.rights')}</p>
+          <p className="footer__cta">{t(FOOTER.cta)}</p>
+          <p className="footer__rights">© {year} {t(FOOTER.rights)}</p>
         </div>
         <div className="footer__socials">
           <a
@@ -21,7 +21,7 @@ export default function Footer() {
             rel="noopener noreferrer"
           >
             <Icon name="link" />
-            <span>{t('footer.linkedin')}</span>
+            <span>{t(FOOTER.linkedin)}</span>
           </a>
           <a
             className="footer__link"
@@ -30,7 +30,7 @@ export default function Footer() {
             rel="noopener noreferrer"
           >
             <Icon name="code" />
-            <span>{t('footer.github')}</span>
+            <span>{t(FOOTER.github)}</span>
           </a>
         </div>
       </div>

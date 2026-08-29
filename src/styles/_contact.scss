@@ -140,6 +140,15 @@
     }
   }
 
+  &__recaptcha {
+    min-height: 78px;
+    transform-origin: left top;
+
+    @include respond('lg') {
+      width: fit-content;
+    }
+  }
+
   &__error {
     font-family: $font-mono;
     font-size: $text-label-sm;

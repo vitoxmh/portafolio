@@ -1,4 +1,4 @@
-import { IMAGES } from '../portfolioData'
+import { ABOUT, IMAGES } from '../data'
 import { useLanguage } from '../hooks/useLanguage'
 
 export default function About() {
@@ -11,7 +11,7 @@ export default function About() {
           <div className="about__media-glow"></div>
           <div
             className="about__portrait"
-            data-alt="A stylized, cinematic portrait of a developer working in a dark, cyberpunk-inspired room illuminated by cyan and purple neon lights, typing code on multiple floating holographic screens, depth of field, high contrast."
+            data-alt={ABOUT.portraitAlt}
             style={{ backgroundImage: `url('${IMAGES.aboutPortrait}')` }}
           >
             <div className="about__portrait-overlay"></div>
@@ -22,22 +22,27 @@ export default function About() {
         </div>
         <div className="about__content">
           <h2 className="about__title">
-            <span className="about__index">01.</span> {t('about.title')}
+            <span className="about__index">01.</span> {t(ABOUT.title)}
           </h2>
           <div className="about__card">
             <div className="about__card-accent"></div>
-            <p className="about__text">{t('about.p1')}</p>
-            <p className="about__text">{t('about.p2')}</p>
+            {ABOUT.paragraphs.map((paragraph, i) => (
+              <p key={i} className="about__text">
+                {t(paragraph)}
+              </p>
+            ))}
           </div>
           <div className="about__stats">
-            <div className="about__stat">
-              <span className="about__stat-value">17+</span>
-              <span className="about__stat-label">{t('about.yearsExp')}</span>
-            </div>
-            <div className="about__stat">
-              <span className="about__stat-value about__stat-value--secondary">50+</span>
-              <span className="about__stat-label">{t('about.projects')}</span>
-            </div>
+            {ABOUT.stats.map((stat, i) => (
+              <div key={i} className="about__stat">
+                <span
+                  className={`about__stat-value${stat.variant ? ` about__stat-value--${stat.variant}` : ''}`}
+                >
+                  {stat.value}
+                </span>
+                <span className="about__stat-label">{t(stat.label)}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

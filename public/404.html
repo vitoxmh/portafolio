@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 | Página no encontrada | Victor Hugo Morales</title>
+    <meta name="description" content="Página no encontrada. ¿Buscabas algo? Diseño y desarrollo landing pages y sitios corporativos para empresas. Conoce mis servicios freelance." />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="404 | Página no encontrada | Victor Hugo Morales" />
+    <meta property="og:description" content="Diseño y desarrollo landing pages y sitios corporativos para empresas." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap"
+    />
+    <style>
+      :root {
+        --color-surface: #131318;
+        --color-surface-container: #1f1f25;
+        --color-on-surface: #e4e1e9;
+        --color-on-surface-variant: #b9cacb;
+        --color-primary-container: #00f0ff;
+        --color-primary-fixed-dim: #00dbe9;
+        --color-secondary-container: #7000ff;
+        --color-secondary-fixed-dim: #d1bcff;
+        --color-outline-variant: #3b494b;
+        --font-headline: 'Hanken Grotesk', sans-serif;
+        --font-body: 'Inter', sans-serif;
+        --font-mono: 'JetBrains Mono', monospace;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        min-height: 100%;
+      }
+
+      body {
+        background: var(--color-surface);
+        color: var(--color-on-surface);
+        font-family: var(--font-body);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      .glow {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        filter: blur(96px);
+        opacity: 0.18;
+        background-image: linear-gradient(
+          to bottom right,
+          var(--color-primary-fixed-dim),
+          var(--color-secondary-container),
+          transparent
+        );
+      }
+
+      .container {
+        position: relative;
+        z-index: 1;
+        max-width: 640px;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--font-mono);
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--color-primary-fixed-dim);
+        border: 1px solid rgba(0, 219, 233, 0.35);
+        border-radius: 999px;
+        padding: 0.5rem 1rem;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .badge::before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--color-primary-container);
+        box-shadow: 0 0 8px var(--color-primary-container);
+      }
+
+      h1.code {
+        font-family: var(--font-headline);
+        font-weight: 900;
+        font-size: clamp(96px, 24vw, 180px);
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+        background: linear-gradient(120deg, var(--color-on-surface) 30%, var(--color-primary-fixed-dim) 60%, var(--color-secondary-fixed-dim));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        user-select: none;
+      }
+
+      h2.title {
+        font-family: var(--font-headline);
+        font-weight: 800;
+        font-size: clamp(22px, 4vw, 32px);
+        line-height: 1.2;
+      }
+
+      p.desc {
+        color: var(--color-on-surface-variant);
+        font-size: 17px;
+        line-height: 1.65;
+        max-width: 34rem;
+      }
+
+      p.desc strong {
+        color: var(--color-on-surface);
+        font-weight: 600;
+      }
+
+      .services {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+        list-style: none;
+      }
+
+      .services li {
+        font-family: var(--font-mono);
+        font-size: 13px;
+        color: var(--color-secondary-fixed-dim);
+        border: 1px solid var(--color-outline-variant);
+        border-radius: 999px;
+        padding: 0.4rem 0.9rem;
+        background: var(--color-surface-container);
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: center;
+        margin-top: 0.5rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--font-body);
+        font-weight: 600;
+        font-size: 15px;
+        text-decoration: none;
+        border-radius: 999px;
+        padding: 0.85rem 1.6rem;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn--primary {
+        background: linear-gradient(120deg, var(--color-primary-fixed-dim), var(--color-primary-container));
+        color: #00363a;
+        box-shadow: 0 0 24px rgba(0, 219, 233, 0.25);
+      }
+
+      .btn--primary:hover {
+        box-shadow: 0 0 36px rgba(0, 219, 233, 0.45);
+      }
+
+      .btn--ghost {
+        color: var(--color-on-surface);
+        border: 1px solid var(--color-outline-variant);
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .btn--ghost:hover {
+        border-color: var(--color-secondary-fixed-dim);
+      }
+
+      footer.note {
+        margin-top: 1rem;
+        font-family: var(--font-mono);
+        font-size: 12px;
+        color: var(--color-on-surface-variant);
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow"></div>
+
+    <main class="container">
+      <span class="badge">error&nbsp;//&nbsp;404</span>
+      <h1 class="code">404</h1>
+
+      <!-- ES -->
+      <div data-lang="es">
+        <h2 class="title">Esta página no existe&hellip; pero tu próximo proyecto sí.</h2>
+        <p class="desc">
+          El enlace que buscas no se encuentra disponible. Mientras tanto, recuerda que
+          <strong>diseño y desarrollo landing pages y sitios corporativos para empresas</strong>:
+          rápidos, optimizados para SEO y listos para convertir visitas en clientes.
+        </p>
+        <ul class="services">
+          <li>Landing Pages</li>
+          <li>Sitios Corporativos</li>
+          <li>Desarrollo Web a Medida</li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn--primary" href="/">Volver al inicio</a>
+          <a class="btn btn--ghost" href="/#contact">Cotizar mi proyecto</a>
+        </div>
+      </div>
+
+      <!-- EN -->
+      <div data-lang="en" hidden>
+        <h2 class="title">This page doesn't exist&hellip; but your next project does.</h2>
+        <p class="desc">
+          The link you're looking for is not available. In the meantime, remember that
+          <strong>I design and build landing pages and corporate websites for companies</strong>:
+          fast, SEO-friendly and ready to turn visits into customers.
+        </p>
+        <ul class="services">
+          <li>Landing Pages</li>
+          <li>Corporate Websites</li>
+          <li>Custom Web Development</li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn--primary" href="/">Back to home</a>
+          <a class="btn btn--ghost" href="/#contact">Get a quote</a>
+        </div>
+      </div>
+
+      <footer class="note">Victor Hugo Morales &middot; Frontend Developer</footer>
+    </main>
+
+    <script>
+      ;(function () {
+        var lang = (navigator.language || '').toLowerCase().indexOf('es') === 0 ? 'es' : 'en'
+        document.documentElement.lang = lang
+        document.querySelectorAll('[data-lang]').forEach(function (el) {
+          el.hidden = el.getAttribute('data-lang') !== lang
+        })
+      })()
+    </script>
+  </body>
+</html>

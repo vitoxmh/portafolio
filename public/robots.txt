@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# Internal assets
+Disallow: /vendor/
+Disallow: /send_contact.php
+Disallow: /config.secret.php
+
 Sitemap: https://victorh-morales.dev/sitemap.xml

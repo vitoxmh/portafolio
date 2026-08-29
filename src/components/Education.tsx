@@ -1,29 +1,6 @@
 import Icon from './Icon'
+import { EDUCATION } from '../data'
 import { useLanguage } from '../hooks/useLanguage'
-import type { TranslationKey } from '../i18n'
-
-const EDUCATION: {
-  icon: string
-  color: 'primary' | 'secondary'
-  degreeKey: TranslationKey
-  universityKey: TranslationKey
-  periodKey: TranslationKey
-}[] = [
-  {
-    icon: 'account_balance',
-    color: 'primary',
-    degreeKey: 'education.item1.degree',
-    universityKey: 'education.item1.university',
-    periodKey: 'education.item1.period',
-  },
-  {
-    icon: 'school',
-    color: 'secondary',
-    degreeKey: 'education.item2.degree',
-    universityKey: 'education.item2.university',
-    periodKey: 'education.item2.period',
-  },
-]
 
 export default function Education() {
   const { t } = useLanguage()
@@ -33,19 +10,19 @@ export default function Education() {
       <div className="education__wrap">
         <div className="education__header">
           <h2 className="education__title">
-            <span className="education__index">05.</span> {t('education.title')}
+            <span className="education__index">06.</span> {t(EDUCATION.title)}
           </h2>
-          <p className="education__subtitle">{t('education.subtitle')}</p>
+          <p className="education__subtitle">{t(EDUCATION.subtitle)}</p>
         </div>
         <div className="education__grid">
-          {EDUCATION.map((edu) => (
-            <div key={edu.degreeKey} className={`education__card education__card--${edu.color}`}>
+          {EDUCATION.items.map((edu) => (
+            <div key={t(edu.degree)} className={`education__card education__card--${edu.color}`}>
               <div className="education__meta">
                 <Icon name={edu.icon} className="education__icon" />
-                <span className="education__period">{t(edu.periodKey)}</span>
+                <span className="education__period">{t(edu.period)}</span>
               </div>
-              <h3 className="education__card-title">{t(edu.degreeKey)}</h3>
-              <p className="education__university">{t(edu.universityKey)}</p>
+              <h3 className="education__card-title">{t(edu.degree)}</h3>
+              <p className="education__university">{t(edu.university)}</p>
             </div>
           ))}
         </div>

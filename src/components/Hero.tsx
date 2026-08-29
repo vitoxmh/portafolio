@@ -1,4 +1,5 @@
 import Icon from './Icon'
+import { HERO } from '../data'
 import { useLanguage } from '../hooks/useLanguage'
 
 export default function Hero() {
@@ -32,44 +33,44 @@ export default function Hero() {
       <div className="hero__content">
         <div className="hero__badge">
           <span className="hero__badge-dot"></span>
-          <span className="hero__badge-text">{t('mhero.badge')}</span>
+          <span className="hero__badge-text">{t(HERO.badge)}</span>
         </div>
         <div className="hero__eyebrow">
           <span className="hero__eyebrow-line"></span>
-          <span className="hero__eyebrow-text">{t('hero.eyebrow')}</span>
+          <span className="hero__eyebrow-text">{t(HERO.eyebrow)}</span>
         </div>
         <h1 className="hero__title">
           <span className="hero__title-mobile">
-            {t('mhero.title1')} <br />
-            <span className="hero__title-gradient">{t('mhero.title2')}</span>
+            {t(HERO.title1Mobile)} <br />
+            <span className="hero__title-gradient">{t(HERO.title2Mobile)}</span>
             <br />
-            {t('mhero.title3')}
+            {t(HERO.title3Mobile)}
           </span>
           <span className="hero__title-desktop">
-            {t('hero.title1')} <br />
-            <span className="hero__title-gradient">{t('hero.title2')}</span>
+            {t(HERO.title1)} <br />
+            <span className="hero__title-gradient">{t(HERO.title2)}</span>
           </span>
         </h1>
-        <p className="hero__subtitle hero__subtitle--mobile">{t('mhero.subtitle')}</p>
-        <p className="hero__subtitle hero__subtitle--desktop">{t('hero.subtitle')}</p>
+        <p className="hero__subtitle hero__subtitle--mobile">{t(HERO.subtitleMobile)}</p>
+        <p className="hero__subtitle hero__subtitle--desktop">{t(HERO.subtitle)}</p>
         <div className="hero__cta">
           <a className="hero__btn hero__btn--primary hero__btn--mobile" href="#projects">
             <Icon name="play_arrow" className="hero__btn-icon" />
-            {t('mhero.viewWork')}
+            {t(HERO.viewWork)}
           </a>
           <a className="hero__btn hero__btn--primary hero__btn--desktop" href="#projects">
-            {t('hero.viewProjects')}
+            {t(HERO.viewProjects)}
           </a>
           <a className="hero__btn hero__btn--outline hero__btn--mobile" href="#contact">
-            {t('hero.contactMe')}
+            {t(HERO.contactMe)}
           </a>
           <a className="hero__btn hero__btn--outline hero__btn--desktop" href="#contact">
-            {t('hero.contactMe')}
+            {t(HERO.contactMe)}
           </a>
         </div>
       </div>
       <div className="hero__scroll">
-        <span className="hero__scroll-label">{t('hero.scroll')}</span>
+        <span className="hero__scroll-label">{t(HERO.scroll)}</span>
         <Icon name="arrow_downward" />
       </div>
     </section>

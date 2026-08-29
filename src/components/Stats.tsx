@@ -1,3 +1,4 @@
+import { STATS } from '../data'
 import { useLanguage } from '../hooks/useLanguage'
 
 export default function Stats() {
@@ -6,14 +7,14 @@ export default function Stats() {
   return (
     <section className="stats">
       <div className="stats__grid">
-        <div className="stats__card">
-          <span className="stats__value">17+</span>
-          <span className="stats__label">{t('stats.years')}</span>
-        </div>
-        <div className="stats__card">
-          <span className="stats__value stats__value--secondary">50+</span>
-          <span className="stats__label">{t('stats.projects')}</span>
-        </div>
+        {STATS.map((stat, i) => (
+          <div key={i} className="stats__card">
+            <span className={`stats__value${stat.variant ? ` stats__value--${stat.variant}` : ''}`}>
+              {stat.value}
+            </span>
+            <span className="stats__label">{t(stat.label)}</span>
+          </div>
+        ))}
       </div>
     </section>
   )
