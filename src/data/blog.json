@@ -1,0 +1,501 @@
+{
+  "title": {
+    "en": "Blog",
+    "es": "Blog"
+  },
+  "subtitle": {
+    "en": "Notes, experiments and things I'm building — from game-dev side projects to AI-assisted workflows.",
+    "es": "Notas, experimentos y cosas que estoy construyendo — desde proyectos paralelos de game dev hasta flujos de trabajo con IA."
+  },
+  "readMore": {
+    "en": "Read post",
+    "es": "Leer post"
+  },
+  "prev": {
+    "en": "Previous post",
+    "es": "Post anterior"
+  },
+  "next": {
+    "en": "Next post",
+    "es": "Post siguiente"
+  },
+  "back": {
+    "en": "Back to blog",
+    "es": "Volver al blog"
+  },
+  "postNotFound": {
+    "en": "Post not found",
+    "es": "Post no encontrado"
+  },
+  "list": [
+    {
+      "slug": "luna-frontend-arcade-pyside6",
+      "date": "2026-08-29",
+      "tags": ["Python", "PySide6", "Game Dev", "Retrogaming"],
+      "title": {
+        "en": "Luna: a Hyperspin-style arcade frontend in pure Python",
+        "es": "Luna: un frontend arcade estilo Hyperspin en Python puro"
+      },
+      "excerpt": {
+        "en": "A desktop app that turns a folder of ROMs into a 3D wheel of consoles and games, written 100% in native Python with PySide6 — with snaps, scraping, gamepad support and a hot-reloadable layout system.",
+        "es": "Una app de escritorio que convierte una carpeta de ROMs en una rueda 3D de consolas y juegos, escrita 100% en Python nativo con PySide6 — con snaps, scraping, soporte de gamepad y un sistema de layout con hot-reload."
+      },
+      "content": {
+        "en": [
+          {
+            "type": "paragraph",
+            "text": "I wanted a 'Hyperspin-like' launcher for my arcade cabinet: pick a platform with a 3D wheel, browse the games, and launch the right emulator. Instead of adapting an existing frontend, I built one from scratch — and the constraint was to do it 100% in native Python with PySide6. No HTML, no CSS, no JavaScript."
+          },
+          {
+            "type": "heading",
+            "text": "A 3D wheel with QPainter"
+          },
+          {
+            "type": "paragraph",
+            "text": "The wheel is a custom widget that draws every item with QPainter: each logo is positioned on a sinusoidal arc, scaled and faded by its distance from the center, and compressed horizontally to fake a Y-axis rotation. Navigation runs with QVariantAnimation and easing curves, so the wheel glides and never jumps."
+          },
+          {
+            "type": "code",
+            "text": "angle = rel * self.angular_separation\nangle_rad = math.radians(angle)\n\n# Posicion en arco sinusoidal + escala por distancia\nx = base_x - math.cos(angle_rad) * self.pull_in_x\ny = center_y + math.sin(angle_rad) * self.radius\nscale = self.central_scale - distance * (self.central_scale - self.min_scale)"
+          },
+          {
+            "type": "heading",
+            "text": "Scanning ROMs with a JSON cache"
+          },
+          {
+            "type": "paragraph",
+            "text": "On startup the app scans the configured folders and groups everything by emulator (MAME, NES, SNES, Sega Naomi, Neo Geo...) with their matching wheel, snap and marquee images. The result is cached as one JSON per emulator in romslist/, which makes the second startup nearly instant — and if the config changed, only the missing platforms get rescanned."
+          },
+          {
+            "type": "heading",
+            "text": "Launching emulators and scraping metadata"
+          },
+          {
+            "type": "paragraph",
+            "text": "Each platform defines how to launch: launch_args with placeholders like {rompath} or {core}, and the app resolves the executable from PATH or standard folders before spawning the process. Game metadata (year, genre, players, manufacturer) is fetched asynchronously with a fallback chain — IGDB, then RAWG, then Wikipedia — and cached so it is asked only once."
+          },
+          {
+            "type": "list",
+            "items": {
+              "en": [
+                "IGDB via Twitch credentials (best quality).",
+                "RAWG with a free API key.",
+                "Wikipedia as a registration-free fallback."
+              ],
+              "es": [
+                "IGDB con credenciales de Twitch (mejor calidad).",
+                "RAWG con una API key gratuita.",
+                "Wikipedia como fallback sin registro."
+              ]
+            }
+          },
+          {
+            "type": "heading",
+            "text": "Gamepad support where Qt failed"
+          },
+          {
+            "type": "paragraph",
+            "text": "PySide6's QGamepad is unreliable with DualShock 4 on Windows, so I moved input to pygame-ce: a manager polls the joysticks and forwards events to the UI as Qt signals, detects hot-plug, and uses separate button maps for PS4 vs Xbox-style controllers. Navigating the cabinet with a pad finally feels right."
+          },
+          {
+            "type": "heading",
+            "text": "A layout system that hot-reloads"
+          },
+          {
+            "type": "paragraph",
+            "text": "All positions are stored relative to a base resolution and rescaled automatically to the current screen. Every section — wheel, background, info panel, video, snap — can be overridden per platform, and a QFileSystemWatcher reloads changes live, so editing the layout with Ctrl+L takes effect without restarting the app."
+          },
+          {
+            "type": "quote",
+            "text": {
+              "en": "A desktop UI doesn't have to be written in the web. QPainter, signals and a bit of trigonometry are more than enough.",
+              "es": "Una UI de escritorio no tiene por qué escribirse en la web. QPainter, signals y un poco de trigonometría son más que suficientes."
+            }
+          },
+          {
+            "type": "paragraph",
+            "text": "The project runs on Windows and Linux, and every visual detail is configurable in JSON. If you're into retrogaming and Python, this has been one of the most satisfying toys I've built."
+          }
+        ],
+        "es": [
+          {
+            "type": "paragraph",
+            "text": "Quería un launcher tipo Hyperspin para mi arcade: elegir una plataforma con una rueda 3D, recorrer los juegos y lanzar el emulador correcto. En lugar de adaptar un frontend existente, construí uno desde cero — y el reto era hacerlo 100% en Python nativo con PySide6. Sin HTML, sin CSS, sin JavaScript."
+          },
+          {
+            "type": "heading",
+            "text": "Una rueda 3D con QPainter"
+          },
+          {
+            "type": "paragraph",
+            "text": "La rueda es un widget custom que dibuja cada ítem con QPainter: cada logo se posiciona sobre un arco sinusoidal, se escala y desvanece según su distancia al centro, y se comprime horizontalmente para simular una rotación en Y. La navegación corre con QVariantAnimation y curvas de easing, así la rueda se desliza y nunca salta."
+          },
+          {
+            "type": "code",
+            "text": "angle = rel * self.angular_separation\nangle_rad = math.radians(angle)\n\n# Posicion en arco sinusoidal + escala por distancia\nx = base_x - math.cos(angle_rad) * self.pull_in_x\ny = center_y + math.sin(angle_rad) * self.radius\nscale = self.central_scale - distance * (self.central_scale - self.min_scale)"
+          },
+          {
+            "type": "heading",
+            "text": "Escaneo de ROMs con caché JSON"
+          },
+          {
+            "type": "paragraph",
+            "text": "Al arrancar, la app recorre las carpetas configuradas y agrupa todo por emulador (MAME, NES, SNES, Sega Naomi, Neo Geo...) con sus imágenes wheel, snap y marquee correspondientes. El resultado queda cacheado como un JSON por emulador en romslist/, lo que hace el segundo arranque casi instantáneo — y si cambió la configuración, solo se re-escanean las plataformas que faltan."
+          },
+          {
+            "type": "heading",
+            "text": "Lanzar emuladores y scrapear metadata"
+          },
+          {
+            "type": "paragraph",
+            "text": "Cada plataforma define cómo lanzar: launch_args con placeholders como {rompath} o {core}, y la app resuelve el ejecutable desde el PATH o carpetas estándar antes de lanzar el proceso. La metadata del juego (año, género, jugadores, fabricante) se obtiene de forma asíncrona con una cadena de fallbacks — IGDB, luego RAWG, luego Wikipedia — y se cachea para pedirse solo una vez."
+          },
+          {
+            "type": "list",
+            "items": {
+              "en": [
+                "IGDB con credenciales de Twitch (mejor calidad).",
+                "RAWG con una API key gratuita.",
+                "Wikipedia como fallback sin registro."
+              ],
+              "es": [
+                "IGDB con credenciales de Twitch (mejor calidad).",
+                "RAWG con una API key gratuita.",
+                "Wikipedia como fallback sin registro."
+              ]
+            }
+          },
+          {
+            "type": "heading",
+            "text": "Soporte de gamepad donde Qt falló"
+          },
+          {
+            "type": "paragraph",
+            "text": "El QGamepad de PySide6 no es confiable con DualShock 4 en Windows, así que moví la entrada a pygame-ce: un manager hace polling de los joysticks y reenvía los eventos a la UI como señales Qt, detecta hot-plug y usa mapas de botones separados para controles PS4 vs estilo Xbox. Navegar el gabinete con un pad por fin se siente bien."
+          },
+          {
+            "type": "heading",
+            "text": "Un sistema de layout con hot-reload"
+          },
+          {
+            "type": "paragraph",
+            "text": "Todas las posiciones se guardan relativas a una resolución base y se reescalan automáticamente a la pantalla actual. Cada sección — rueda, fondo, panel de info, video, snap — se puede sobreescribir por plataforma, y un QFileSystemWatcher recarga los cambios en vivo, así editar el layout con Ctrl+L tiene efecto sin reiniciar la app."
+          },
+          {
+            "type": "quote",
+            "text": {
+              "en": "A desktop UI doesn't have to be written in the web. QPainter, signals and a bit of trigonometry are more than enough.",
+              "es": "Una UI de escritorio no tiene por qué escribirse en la web. QPainter, signals y un poco de trigonometría son más que suficientes."
+            }
+          },
+          {
+            "type": "paragraph",
+            "text": "El proyecto corre en Windows y Linux, y cada detalle visual es configurable en JSON. Si te gusta el retrogaming y Python, este ha sido uno de los juguetes más entretenidos que he construido."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "opencode-agente-ia-en-mi-workflow",
+      "date": "2026-08-22",
+      "tags": ["AI", "Opencode", "Workflow"],
+      "title": {
+        "en": "Bringing the Opencode agent into my workflow",
+        "es": "Integrando el agente Opencode a mi flujo de trabajo"
+      },
+      "excerpt": {
+        "en": "How I started using a coding agent that lives in the terminal to write, refactor and verify code — and how it changed the way I ship features.",
+        "es": "Cómo empecé a usar un agente de código que vive en la terminal para escribir, refactorizar y verificar código — y cómo cambió la forma en que entrego funcionalidades."
+      },
+      "content": {
+        "en": [
+          {
+            "type": "paragraph",
+            "text": "For the last few months I have been adding an AI agent called Opencode to my daily workflow. It is not a chat window I copy and paste from: it runs in the terminal, inside the project, with access to the real files, the real build and the real tests."
+          },
+          {
+            "type": "heading",
+            "text": "Why the terminal"
+          },
+          {
+            "type": "paragraph",
+            "text": "The main difference with other tools is context. The agent reads the repository, understands the conventions of the codebase, and can reason about a change before making it. That means fewer hallucinations and edits that fit the style of the project."
+          },
+          {
+            "type": "list",
+            "items": {
+              "en": [
+                "The agent proposes changes directly as edits to real files.",
+                "It respects existing conventions (in my case: TypeScript, BEM with SCSS, oxlint).",
+                "I review every diff before accepting it."
+              ],
+              "es": [
+                "El agente propone cambios directamente como ediciones a archivos reales.",
+                "Respeta las convenciones del proyecto (en mi caso: TypeScript, BEM con SCSS, oxlint).",
+                "Reviso cada diff antes de aceptarlo."
+              ]
+            }
+          },
+          {
+            "type": "heading",
+            "text": "My workflow",
+            "es": "Mi flujo"
+          },
+          {
+            "type": "paragraph",
+            "text": "I describe the task in natural language, the agent explores the code, writes the implementation and then I run lint, build and tests before committing. The loop is short and I keep full control of what lands in the repository.",
+            "es": "Describo la tarea en lenguaje natural, el agente explora el código, escribe la implementación y luego ejecuto lint, build y tests antes de hacer commit. El ciclo es corto y mantengo control total sobre lo que llega al repositorio."
+          },
+          {
+            "type": "quote",
+            "text": {
+              "en": "The value is not the code the agent writes. The value is the time I save so I can spend it designing better solutions.",
+              "es": "El valor no es el código que escribe el agente. El valor es el tiempo que ahorro para invertirlo en diseñar mejores soluciones."
+            }
+          },
+          {
+            "type": "paragraph",
+            "text": "If you use this site, you already know: this blog section was built with the agent's help. In future posts I will share more details about the setup, costs, and where I think AI-assisted development is heading.",
+            "es": "Si usas este sitio, ya lo sabes: esta sección de blog se construyó con la ayuda del agente. En futuros posts compartiré más detalles sobre la configuración, los costos y hacia dónde creo que va el desarrollo asistido por IA."
+          }
+        ],
+        "es": [
+          {
+            "type": "paragraph",
+            "text": "Durante los últimos meses he estado integrando un agente de IA llamado Opencode a mi flujo de trabajo diario. No es una ventana de chat de la que copio y pego: corre en la terminal, dentro del proyecto, con acceso a los archivos reales, el build real y los tests reales."
+          },
+          {
+            "type": "heading",
+            "text": "Por qué la terminal"
+          },
+          {
+            "type": "paragraph",
+            "text": "La diferencia principal con otras herramientas es el contexto. El agente lee el repositorio, entiende las convenciones del codebase y puede razonar sobre un cambio antes de hacerlo. Eso significa alucinaciones a la baja y ediciones que se ajustan al estilo del proyecto."
+          },
+          {
+            "type": "list",
+            "items": {
+              "en": [
+                "El agente propone cambios directamente como ediciones a archivos reales.",
+                "Respeta las convenciones del proyecto (en mi caso: TypeScript, BEM con SCSS, oxlint).",
+                "Reviso cada diff antes de aceptarlo."
+              ],
+              "es": [
+                "El agente propone cambios directamente como ediciones a archivos reales.",
+                "Respeta las convenciones del proyecto (en mi caso: TypeScript, BEM con SCSS, oxlint).",
+                "Reviso cada diff antes de aceptarlo."
+              ]
+            }
+          },
+          {
+            "type": "heading",
+            "text": "Mi flujo"
+          },
+          {
+            "type": "paragraph",
+            "text": "Describo la tarea en lenguaje natural, el agente explora el código, escribe la implementación y luego ejecuto lint, build y tests antes de hacer commit. El ciclo es corto y mantengo control total sobre lo que llega al repositorio."
+          },
+          {
+            "type": "quote",
+            "text": {
+              "en": "The value is not the code the agent writes. The value is the time I save so I can spend it designing better solutions.",
+              "es": "El valor no es el código que escribe el agente. El valor es el tiempo que ahorro para invertirlo en diseñar mejores soluciones."
+            }
+          },
+          {
+            "type": "paragraph",
+            "text": "Si usas este sitio, ya lo sabes: esta sección de blog se construyó con la ayuda del agente. En futuros posts compartiré más detalles sobre la configuración, los costos y hacia dónde creo que va el desarrollo asistido por IA."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "tetris-game-boy-en-javascript",
+      "date": "2026-08-18",
+      "tags": ["JavaScript", "Canvas", "Game Dev"],
+      "title": {
+        "en": "Tetris Game Boy in JavaScript: pixels without sprites",
+        "es": "Tetris Game Boy en JavaScript: píxeles sin sprites"
+      },
+      "excerpt": {
+        "en": "A faithful recreation of the classic Game Boy Tetris built with vanilla JS and HTML5 Canvas, where every graphic is rendered pixel by pixel from mathematical arrays.",
+        "es": "Una recreación fiel del Tetris clásico de Game Boy construida con JavaScript vanilla y HTML5 Canvas, donde cada gráfico se renderiza píxel a píxel desde arreglos matemáticos."
+      },
+      "content": {
+        "en": [
+          {
+            "type": "paragraph",
+            "text": "I have always liked the aesthetics of the original Game Boy Tetris: four shades of gray, chunky pixels and no external assets. That constraint was the challenge — render everything in code."
+          },
+          {
+            "type": "heading",
+            "text": "The rendering trick"
+          },
+          {
+            "type": "paragraph",
+            "text": "Each graphic is defined as a two-dimensional array of numbers. Each number maps to one of the grayscale tones of the palette, so drawing a block simply means translating a matrix into pixels on a canvas. No sprite sheets, no images, no loading waits."
+          },
+          {
+            "type": "code",
+            "text": "// 1 = light gray, 2 = dark gray, 0 = transparent\nconst BLOCK = [\n  [0, 1, 1, 0],\n  [0, 2, 2, 0]\n]"
+          },
+          {
+            "type": "heading",
+            "text": "Game loop and feel"
+          },
+          {
+            "type": "paragraph",
+            "text": "The rotation, wall kicks and gravity are handled with a fixed game loop and a soft-drop system that keeps the original speed feel. I also tried to reproduce the iconic 7-bag randomizer so the piece distribution stays fair."
+          },
+          {
+            "type": "heading",
+            "text": "Play it"
+          },
+          {
+            "type": "paragraph",
+            "text": "The game is fully open to play at /tetris/. The code is pure vanilla JavaScript + Canvas, so it runs anywhere without dependencies."
+          }
+        ],
+        "es": [
+          {
+            "type": "paragraph",
+            "text": "Siempre me gustó la estética del Tetris original de Game Boy: cuatro tonos de gris, píxeles gruesos y cero assets externos. Esa restricción fue el reto — renderizar todo en código."
+          },
+          {
+            "type": "heading",
+            "text": "El truco del renderizado"
+          },
+          {
+            "type": "paragraph",
+            "text": "Cada gráfico se define como un arreglo bidimensional de números. Cada número mapea a uno de los tonos de gris de la paleta, así que dibujar una pieza es simplemente traducir una matriz a píxeles en un canvas. Sin hojas de sprites, sin imágenes, sin esperas de carga."
+          },
+          {
+            "type": "code",
+            "text": "// 1 = gris claro, 2 = gris oscuro, 0 = transparente\nconst BLOCK = [\n  [0, 1, 1, 0],\n  [0, 2, 2, 0]\n]"
+          },
+          {
+            "type": "heading",
+            "text": "Bucle de juego y sensación"
+          },
+          {
+            "type": "paragraph",
+            "text": "La rotación, los wall kicks y la gravedad se manejan con un bucle de juego fijo y un sistema de soft drop que preserva la velocidad original. También intenté reproducir el conocido 7-bag randomizer para que la distribución de piezas sea justa."
+          },
+          {
+            "type": "heading",
+            "text": "Juega"
+          },
+          {
+            "type": "paragraph",
+            "text": "El juego está disponible para jugar en /tetris/. El código es JavaScript vanilla + Canvas, así que corre en cualquier lugar sin dependencias."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "sistema-de-inventario-para-colecciones-gaming",
+      "date": "2026-08-10",
+      "tags": ["PHP", "React", "Docker", "MySQL"],
+      "title": {
+        "en": "A self-hosted inventory system for my gaming collection",
+        "es": "Un sistema de inventario auto-alojado para mi colección gaming"
+      },
+      "excerpt": {
+        "en": "Managing thousands of items in a collection is impossible without a system: this is how I built one with PHP, FastAPI, React and MySQL, all orchestrated with Docker.",
+        "es": "Administrar miles de ítems en una colección es imposible sin un sistema: así construí uno con PHP, FastAPI, React y MySQL, todo orquestado con Docker."
+      },
+      "content": {
+        "en": [
+          {
+            "type": "paragraph",
+            "text": "Collecting video games, consoles, amiibos and books outgrew any spreadsheet I tried. So I built my own management system: a web application to register, search and organize every item of the collection."
+          },
+          {
+            "type": "heading",
+            "text": "Architecture"
+          },
+          {
+            "type": "list",
+            "items": {
+              "en": [
+                "A PHP REST API as the main backend.",
+                "A secondary API in Python with FastAPI for auxiliary services.",
+                "A React frontend consuming both APIs.",
+                "MySQL 8.0 as the database.",
+                "Everything orchestrated with Docker."
+              ],
+              "es": [
+                "Una API REST en PHP como backend principal.",
+                "Una API secundaria en Python con FastAPI para servicios auxiliares.",
+                "Un frontend en React que consume ambas APIs.",
+                "MySQL 8.0 como base de datos.",
+                "Todo orquestado con Docker."
+              ]
+            }
+          },
+          {
+            "type": "heading",
+            "text": "Why two APIs"
+          },
+          {
+            "type": "paragraph",
+            "text": "It sounds over-engineered, and in part it is: I used it as a chance to practice integrating heterogeneous services. The FastAPI service handles isolated jobs, while PHP keeps the core CRUD small and predictable."
+          },
+          {
+            "type": "code",
+            "text": "services:\n  db:\n    image: mysql:8.0\n    environment:\n      MYSQL_DATABASE: collection\n  api-php:\n    build: ./api-php\n    depends_on: [db]\n  api-python:\n    build: ./api-python\n    depends_on: [db]\n  web:\n    build: ./web\n    depends_on: [api-php, api-python]"
+          },
+          {
+            "type": "paragraph",
+            "text": "The best part of a system like this is being able to answer questions in seconds: what do I own for this platform, which amiibos am I missing, how many games are still sealed. Next step is adding a barcode scanner to make registering faster."
+          }
+        ],
+        "es": [
+          {
+            "type": "paragraph",
+            "text": "Coleccionar videojuegos, consolas, amiibos y libros superó cualquier hoja de cálculo que intenté. Así que construí mi propio sistema de gestión: una aplicación web para registrar, buscar y organizar cada ítem de la colección."
+          },
+          {
+            "type": "heading",
+            "text": "Arquitectura"
+          },
+          {
+            "type": "list",
+            "items": {
+              "en": [
+                "Una API REST en PHP como backend principal.",
+                "Una API secundaria en Python con FastAPI para servicios auxiliares.",
+                "Un frontend en React que consume ambas APIs.",
+                "MySQL 8.0 como base de datos.",
+                "Todo orquestado con Docker."
+              ],
+              "es": [
+                "Una API REST en PHP como backend principal.",
+                "Una API secundaria en Python con FastAPI para servicios auxiliares.",
+                "Un frontend en React que consume ambas APIs.",
+                "MySQL 8.0 como base de datos.",
+                "Todo orquestado con Docker."
+              ]
+            }
+          },
+          {
+            "type": "heading",
+            "text": "Por qué dos APIs"
+          },
+          {
+            "type": "paragraph",
+            "text": "Suena a sobre-ingeniería, y en parte lo es: lo usé como excusa para practicar la integración de servicios heterogéneos. El servicio FastAPI maneja trabajos aislados, mientras PHP mantiene el CRUD central pequeño y predecible."
+          },
+          {
+            "type": "code",
+            "text": "services:\n  db:\n    image: mysql:8.0\n    environment:\n      MYSQL_DATABASE: collection\n  api-php:\n    build: ./api-php\n    depends_on: [db]\n  api-python:\n    build: ./api-python\n    depends_on: [db]\n  web:\n    build: ./web\n    depends_on: [api-php, api-python]"
+          },
+          {
+            "type": "paragraph",
+            "text": "Lo mejor de un sistema así es poder responder preguntas en segundos: qué tengo de esta plataforma, qué amiibos me faltan, cuántos juegos están sellados. El siguiente paso es agregar un lector de código de barras para acelerar el registro."
+          }
+        ]
+      }
+    }
+  ]
+}

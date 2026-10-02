@@ -17,11 +17,8 @@ dist-ssr
 .env.*
 !.env.example
 
-# Local secret config for PHP endpoints
+# Local secret config (never commit)
 public/config.secret.php
-
-# SMTP error log written by send_contact.php
-public/send_contact.log
 
 # Editor directories and files
 .vscode/*

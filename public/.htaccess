@@ -6,7 +6,7 @@
 # --- Página de error 404 ---
 ErrorDocument 404 /404.html
 
-# --- Proteger archivo de secretos (solo uso server-side por send_contact.php) ---
+# --- Proteger archivo de secretos local ---
 <Files "config.secret.php">
   <IfModule mod_authz_core.c>
     Require all denied

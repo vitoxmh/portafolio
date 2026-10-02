@@ -69,6 +69,12 @@
         "active": false
       },
       {
+        "path": "blog",
+        "href": "#blog",
+        "label": { "en": "BLOG", "es": "BLOG" },
+        "active": false
+      },
+      {
         "path": "contact",
         "href": "#contact",
         "label": { "en": "CONTACT", "es": "CONTACTO" },
@@ -95,6 +101,13 @@
         "href": "#experience",
         "icon": "history_edu",
         "label": { "en": "Exp", "es": "Exp" },
+        "active": false
+      },
+      {
+        "path": "blog",
+        "href": "#blog",
+        "icon": "edit_note",
+        "label": { "en": "Blog", "es": "Blog" },
         "active": false
       },
       {
@@ -133,12 +146,12 @@
       "es": "con Código"
     },
     "subtitle": {
-      "en": "More than 17 years of experience in web development and Front-End, designing and building robust, scalable applications focused on user experience. Specialized in JavaScript, React, and modern web technologies, with a strong comprehensive understanding of software development.",
-      "es": "Más de 17 años de experiencia en desarrollo web y Front-End, diseñando y construyendo aplicaciones robustas, escalables y centradas en la experiencia de usuario. Especializado en JavaScript, React y tecnologías web modernas, con una sólida visión integral del desarrollo de software."
+      "en": "More than 17 years of experience in web development and Front-End, designing and building robust, scalable applications focused on user experience. Specialized in JavaScript, React, and modern web technologies, with a strong comprehensive understanding of software development. I also build websites for small businesses and entrepreneurs.",
+      "es": "Más de 17 años de experiencia en desarrollo web y Front-End, diseñando y construyendo aplicaciones robustas, escalables y centradas en la experiencia de usuario. Especializado en JavaScript, React y tecnologías web modernas, con una sólida visión integral del desarrollo de software. Además, desarrollo páginas web para pequeñas empresas y emprendedores."
     },
     "subtitleMobile": {
-      "en": "Senior Frontend & Game Developer merging structural integrity with creative flair.",
-      "es": "Desarrollador Frontend Senior y de videojuegos, fusionando integridad estructural con ingenio creativo."
+      "en": "Senior Frontend & Game Developer merging structural integrity with creative flair. I also build websites for small businesses and entrepreneurs.",
+      "es": "Desarrollador Frontend Senior y de videojuegos, fusionando integridad estructural con ingenio creativo. También desarrollo páginas web para pequeñas empresas y emprendedores."
     },
     "viewProjects": {
       "en": "VIEW PROJECTS",
@@ -348,7 +361,7 @@
         "id": "pacman",
         "variant": "primary",
         "image": "/img/pacman.jpg",
-        "url": "https://pacman-online.vercel.app/",
+        "url": "https://pacman.victor-morales.site/",
         "alt": {
           "en": "A stylized retro arcade screen showing a glowing cyan and magenta version of a classic maze game similar to Pac-Man, with neon grid lines, dark background, cyberpunk aesthetic, high contrast.",
           "es": "Una pantalla de arcade retro estilizada mostrando una versión brillante en cian y magenta de un juego de laberinto clásico similar a Pac-Man, con líneas de rejilla neón, fondo oscuro, estética cyberpunk y alto contraste."
@@ -429,7 +442,7 @@
         "id": "tetris",
         "variant": "tertiary",
         "image": "/img/tetris-desktop.jpg",
-        "url": "/tetris/",
+        "url": "https://tetris.victor-morales.site/",
         "alt": {
           "en": "A Tetris game inspired by the classic Game Boy version, fully developed using vanilla JavaScript and the HTML5 Canvas API. All graphics are rendered pixel by pixel using mathematical arrays, without relying on external sprite sheets or image assets.",
           "es": "Un juego de Tetris inspirado en la versión clásica de Game Boy, completamente desarrollado con JavaScript vanilla y HTML5 Canvas. Todo el renderizado gráfico se realiza pixel por pixel mediante arreglos matemáticos, sin usar hojas de sprites externas."
@@ -446,7 +459,7 @@
         "links": [
           {
             "icon": "play_arrow",
-            "url": "/tetris/"
+            "url": "https://tetris.victor-morales.site/"
           }
         ]
       },
@@ -670,94 +683,12 @@
       "es": "Contacto"
     },
     "subtitle": {
-      "en": "Have a project in mind or want to collaborate? Send a message and let's build something exceptional together.",
-      "es": "¿Tienes un proyecto en mente o quieres colaborar? Envía un mensaje y construyamos algo excepcional juntos."
-    },
-    "name": {
-      "en": "NAME",
-      "es": "NOMBRE"
+      "en": "Have a project in mind or want to collaborate? Reach out and let's build something exceptional together.",
+      "es": "¿Tienes un proyecto en mente o quieres colaborar? Escríbeme y construyamos algo excepcional juntos."
     },
     "email": {
       "en": "EMAIL",
       "es": "EMAIL"
-    },
-    "subject": {
-      "en": "SUBJECT",
-      "es": "ASUNTO"
-    },
-    "message": {
-      "en": "MESSAGE",
-      "es": "MENSAJE"
-    },
-    "namePlaceholder": {
-      "en": "Your name",
-      "es": "Tu nombre"
-    },
-    "emailPlaceholder": {
-      "en": "you@example.com",
-      "es": "tu@ejemplo.com"
-    },
-    "subjectPlaceholder": {
-      "en": "Project inquiry",
-      "es": "Consulta de proyecto"
-    },
-    "messagePlaceholder": {
-      "en": "Tell me about your project...",
-      "es": "Cuéntame sobre tu proyecto..."
-    },
-    "send": {
-      "en": "SEND TRANSMISSION",
-      "es": "ENVIAR TRANSMISIÓN"
-    },
-    "sending": {
-      "en": "SENDING...",
-      "es": "ENVIANDO..."
-    },
-    "success": {
-      "en": "Message sent. I'll get back to you soon.",
-      "es": "Mensaje enviado. Te responderé pronto."
-    },
-    "errors": {
-      "nameRequired": {
-        "en": "Name is required.",
-        "es": "El nombre es obligatorio."
-      },
-      "nameTooLong": {
-        "en": "Name must be 100 characters or less.",
-        "es": "El nombre debe tener 100 caracteres o menos."
-      },
-      "emailRequired": {
-        "en": "Email is required.",
-        "es": "El email es obligatorio."
-      },
-      "emailInvalid": {
-        "en": "Enter a valid email address.",
-        "es": "Ingresa un email válido."
-      },
-      "emailTooLong": {
-        "en": "Email must be 254 characters or less.",
-        "es": "El email debe tener 254 caracteres o menos."
-      },
-      "subjectTooLong": {
-        "en": "Subject must be 150 characters or less.",
-        "es": "El asunto debe tener 150 caracteres o menos."
-      },
-      "messageRequired": {
-        "en": "Message is required.",
-        "es": "El mensaje es obligatorio."
-      },
-      "messageTooLong": {
-        "en": "Message must be 5000 characters or less.",
-        "es": "El mensaje debe tener 5000 caracteres o menos."
-      },
-      "sendFailed": {
-        "en": "The message could not be sent.",
-        "es": "No se pudo enviar el mensaje."
-      },
-      "captchaRequired": {
-        "en": "Please complete the captcha before sending.",
-        "es": "Completa el captcha antes de enviar."
-      }
     },
     "methods": {
       "linkedin": {

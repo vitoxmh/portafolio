@@ -1,4 +1,5 @@
 import portfolio from './data/portfolio.json'
+import blog from './data/blog.json'
 import type { LocalizedList, LocalizedString } from './i18n'
 
 export const SITE = portfolio.site
@@ -59,3 +60,52 @@ export interface ProjectsSection {
 }
 
 export const PROJECTS = portfolio.projects as ProjectsSection
+
+interface BlogParagraph {
+  type: 'paragraph'
+  text: LocalizedString
+}
+
+interface BlogHeading {
+  type: 'heading'
+  text: LocalizedString
+}
+
+interface BlogList {
+  type: 'list'
+  items: LocalizedList
+}
+
+interface BlogCode {
+  type: 'code'
+  text: string
+}
+
+interface BlogQuote {
+  type: 'quote'
+  text: LocalizedString
+}
+
+export type BlogBlock = BlogParagraph | BlogHeading | BlogList | BlogCode | BlogQuote
+
+export interface BlogPost {
+  slug: string
+  date: string
+  tags: string[]
+  title: LocalizedString
+  excerpt: LocalizedString
+  content: { en: BlogBlock[]; es: BlogBlock[] }
+}
+
+export interface BlogSection {
+  title: LocalizedString
+  subtitle: LocalizedString
+  readMore: LocalizedString
+  prev: LocalizedString
+  next: LocalizedString
+  back: LocalizedString
+  postNotFound: LocalizedString
+  list: BlogPost[]
+}
+
+export const BLOG = blog as BlogSection
